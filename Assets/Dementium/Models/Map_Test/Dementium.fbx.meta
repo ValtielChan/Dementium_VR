@@ -1,0 +1,2237 @@
+fileFormatVersion: 2
+guid: 050a3068484fa9744a1799afae0e69e1
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.192
+    second: {fileID: 2100000, guid: 04f83fbef3ac39e4ea97c664153e9734, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.194
+    second: {fileID: 2100000, guid: 8748381b13a3abf4589c0857a0274ebb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.195
+    second: {fileID: 2100000, guid: c8468530bdd32e145b46c92ea30bd74f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.196
+    second: {fileID: 2100000, guid: 03fb738bc351db047867732c52e7928e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.197
+    second: {fileID: 2100000, guid: 6281324a6bda3d8429d2f2aa08ca23ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.198
+    second: {fileID: 2100000, guid: a73df6ef7bca9534aafda80eca55a948, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.199
+    second: {fileID: 2100000, guid: 0ecf41f9ab5b9f247b823132686af506, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.200
+    second: {fileID: 2100000, guid: fb8e688919ff96e4596aa4c47d7fe0ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.201
+    second: {fileID: 2100000, guid: bf364d03d43037948bdee12b52e15dd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.202
+    second: {fileID: 2100000, guid: f18ac015ae0cc364ea78e6e97c897f21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.203
+    second: {fileID: 2100000, guid: b39709bd6adc08346819e4d63a629cd9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.204
+    second: {fileID: 2100000, guid: eeec948eb1d70534085df9c9fefb625f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.205
+    second: {fileID: 2100000, guid: 773ff7030ad44ca4b87b918a91f589fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.206
+    second: {fileID: 2100000, guid: 411a124d362e26b47ab4290cd78606f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.207
+    second: {fileID: 2100000, guid: 9d94ce99ad670d241a33965954eabe83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.208
+    second: {fileID: 2100000, guid: 9324e82c501f78c48b804cc825054826, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.209
+    second: {fileID: 2100000, guid: 86531d80d86d22a4f830695529c4e6cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.210
+    second: {fileID: 2100000, guid: 1f4d9efd9fded2247908ef346353056c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.211
+    second: {fileID: 2100000, guid: 883577bbc66f6524894267d8edc2a64c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.212
+    second: {fileID: 2100000, guid: 7001c378b67c84d47920ac0d4b9643e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.213
+    second: {fileID: 2100000, guid: 4a50825964ffec241bf624c1e60c5b9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.214
+    second: {fileID: 2100000, guid: 9a19585f55837f647b8cbcbd0aa2d159, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.215
+    second: {fileID: 2100000, guid: 64f731a7311cb5a4daf3d56c83216a45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.216
+    second: {fileID: 2100000, guid: 9b36902f7bd77854d8b9c39aa63ab4b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.217
+    second: {fileID: 2100000, guid: 1a67783d587e70d4bb38b447f4c170e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.218
+    second: {fileID: 2100000, guid: 640469719b364a44ba9aaf3e18c14228, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.219
+    second: {fileID: 2100000, guid: 2727424ce7a798e4ea62fbaf90243ed6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.220
+    second: {fileID: 2100000, guid: d417ac310d7a4f14c8880b7e67bc1c6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.221
+    second: {fileID: 2100000, guid: 84daf7f30d65ef142acfe6bbaa0469aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.222
+    second: {fileID: 2100000, guid: d66fd3f29ca64ca4193e0d743e7664f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.223
+    second: {fileID: 2100000, guid: 7955fbd784bcd324b998ef57df12db90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.224
+    second: {fileID: 2100000, guid: 45666f85c6845a6428dba007b05d590c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.225
+    second: {fileID: 2100000, guid: b5e26b9cffb74ad4da01f2c6c24d85c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.226
+    second: {fileID: 2100000, guid: 3071cdc3b0f691c47949659bcade9d5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.227
+    second: {fileID: 2100000, guid: 14306ec9fee7ecd4092beec15aff7245, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.228
+    second: {fileID: 2100000, guid: 48447951540f17b408e8578cfb177c53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.263
+    second: {fileID: 2100000, guid: 2eaf71d5ece92c04b873ceba4af1ee69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.265
+    second: {fileID: 2100000, guid: 526abc227acd0df488853b9029bc86b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.266
+    second: {fileID: 2100000, guid: f2fb9c2f83543de4282b3569aff69bd4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.267
+    second: {fileID: 2100000, guid: 0d37652826593824a8fa37c0e5bc473b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.269
+    second: {fileID: 2100000, guid: 977f02177d71753429d66681e86a4d42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.270
+    second: {fileID: 2100000, guid: 6136efc90fcf5214d960f7d7930d273d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.271
+    second: {fileID: 2100000, guid: 1621e12035424a34abd9480267283690, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.272
+    second: {fileID: 2100000, guid: 8af223760e9fe6340b68a180ae1f7e7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.273
+    second: {fileID: 2100000, guid: e915543c014caaa49adbe6ae432b1493, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.274
+    second: {fileID: 2100000, guid: 4848b9bf4ff1ffc488e1e7ba3bf0b316, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.275
+    second: {fileID: 2100000, guid: 25f1bb50eb6999e469724fcfda5a3b3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.276
+    second: {fileID: 2100000, guid: 87df91e9bf02d6342bf62e121661757a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.277
+    second: {fileID: 2100000, guid: 726e916d05e0a9b468ef3f2a91714112, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.278
+    second: {fileID: 2100000, guid: 81429b592c380704f84acc9daf4e10d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.279
+    second: {fileID: 2100000, guid: eb352a488d5ee0148acc14d8f693e439, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.280
+    second: {fileID: 2100000, guid: 7cc353be94eafc3438fcc960b19011d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.281
+    second: {fileID: 2100000, guid: 7251ae4d9a4170b41acd5e54a79cc52c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.282
+    second: {fileID: 2100000, guid: d83a2d64bcd6c9b42849c0772e38d186, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.283
+    second: {fileID: 2100000, guid: 0c92c81ee00823f4e8f8c8f3a0cc1ef4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.284
+    second: {fileID: 2100000, guid: 6d1fbef8d9920eb4fb3d889695666e9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.285
+    second: {fileID: 2100000, guid: edb4f1be57774874595ff1b2ad1206f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.286
+    second: {fileID: 2100000, guid: a69878ccded0e1647a1b2b6f53f6666d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.287
+    second: {fileID: 2100000, guid: c8702af9d38014e44b5bdcefec50f4c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.288
+    second: {fileID: 2100000, guid: cb8cfada0bc3df84a9518c7cd81b7ca3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.289
+    second: {fileID: 2100000, guid: c24ac1e5f392b4646bf614ebb591dc55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.290
+    second: {fileID: 2100000, guid: ba67c9befea8a0344a05e4cf544422f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.291
+    second: {fileID: 2100000, guid: 2761c9a25bd45bf44b0f27fda2b232df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.292
+    second: {fileID: 2100000, guid: 524cd2393004e5e498db718d5e33a022, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.293
+    second: {fileID: 2100000, guid: 786cf4875a0b5b64b8e68c6f886fd1d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.294
+    second: {fileID: 2100000, guid: 5ec7ec64d3c300f488a3f95de5d7d39a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.295
+    second: {fileID: 2100000, guid: 983ba118e0ba333459d7bc102d1eff1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.296
+    second: {fileID: 2100000, guid: 601e3400e0c7dfb4f8713ba2a085a8ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.297
+    second: {fileID: 2100000, guid: 0845e9b9eff9c2744a564948f8cdaf18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.298
+    second: {fileID: 2100000, guid: 9d239a69ccd01f9459c4e194d4224290, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.299
+    second: {fileID: 2100000, guid: 7d0fae614a969a047a8ca45bf1c123d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.300
+    second: {fileID: 2100000, guid: 9673851154d873f45b2cab435260bd00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.301
+    second: {fileID: 2100000, guid: 95d49fac3c714434c8cec1f13b4627ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.302
+    second: {fileID: 2100000, guid: 0d96b3360d9c39a4d84f7c0edf248e69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.303
+    second: {fileID: 2100000, guid: b27e7005e7d337b45a5309edbeb0df8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.304
+    second: {fileID: 2100000, guid: 32c3b1cd2471f104daf8d25200eef64b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.349
+    second: {fileID: 2100000, guid: fe10e4418c645c74cbbe7a6c1ca64c93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.350
+    second: {fileID: 2100000, guid: 52d3be78bbd81ac4089dd1c44057aeb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.351
+    second: {fileID: 2100000, guid: 0ace9e60210d1ab49a4b38180a5f320b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.353
+    second: {fileID: 2100000, guid: ac20e6946859b5949990c4d8b7ab8688, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.354
+    second: {fileID: 2100000, guid: bc1a4f1a79ab32d469ddd0896477ceba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.356
+    second: {fileID: 2100000, guid: 233463da9dbe75743a29691697f9e85d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.357
+    second: {fileID: 2100000, guid: a94cfcc740176c64399b9f02c0bd376c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.358
+    second: {fileID: 2100000, guid: 49f0cacfcec360642af774aea3694dc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.359
+    second: {fileID: 2100000, guid: 45070b2f05bb1ae4fa15183b195fe954, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.360
+    second: {fileID: 2100000, guid: f58eb465e446cdd4bad3b7392bb9f74e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.362
+    second: {fileID: 2100000, guid: e238d46030ec075418752eb5082d7ce9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.364
+    second: {fileID: 2100000, guid: 6d4454903030be0428da99976bec541e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.365
+    second: {fileID: 2100000, guid: 191f49cb88a51af42b0c7cc5a1bf5ca7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.368
+    second: {fileID: 2100000, guid: baadd42406476a54d9f6fe32611d733b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.369
+    second: {fileID: 2100000, guid: e004f1110cf9b984986d5a4886752c56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.370
+    second: {fileID: 2100000, guid: 6c6bfcfcbec0af242a5324653a934f38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.371
+    second: {fileID: 2100000, guid: 72a366636e8269948878b45f58fc70b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.372
+    second: {fileID: 2100000, guid: 5f7690f4c5574b04a8092b6bdad23dca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.373
+    second: {fileID: 2100000, guid: e60ebbf2b1cd62742ad76e30760a60f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.374
+    second: {fileID: 2100000, guid: aed47a96ff6b1bd469f5f32979eb4636, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.375
+    second: {fileID: 2100000, guid: 86edcee36918f3c48b324420b04f2ab7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.376
+    second: {fileID: 2100000, guid: 040e967700636c9419671ba6d12433d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.377
+    second: {fileID: 2100000, guid: 5f2e17455d7a45744ba8c708382d3924, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.378
+    second: {fileID: 2100000, guid: b0b5967aa9d0cd64692986904ce7a0e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.380
+    second: {fileID: 2100000, guid: eb677d0d5bfda36479a4d3f09328ff22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.381
+    second: {fileID: 2100000, guid: 0299a49a63246bb499dc8319be9dac26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.382
+    second: {fileID: 2100000, guid: 2932cd4dcc8bbc7448c4bd507fac3253, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.383
+    second: {fileID: 2100000, guid: 4f98bf0bc721a5d4da910a25af621fdb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.384
+    second: {fileID: 2100000, guid: eade42b4920603f49a2d4a3faaf2ee44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.385
+    second: {fileID: 2100000, guid: cd50ef0b8ddc6de45bfafd4a87b1abff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.386
+    second: {fileID: 2100000, guid: d50a67568ab40734a8f8ebf833abbc89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.387
+    second: {fileID: 2100000, guid: ef6a487659e28274f87b4ebe5c998b1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.388
+    second: {fileID: 2100000, guid: 38d6653639cc94a45862a26844d1a2a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.389
+    second: {fileID: 2100000, guid: 6e77b4be6e57e854aa71dff578136656, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.390
+    second: {fileID: 2100000, guid: eb27cbc3124b35646bad038cb7680121, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.391
+    second: {fileID: 2100000, guid: a1b623d1747665940b09572a76931238, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.392
+    second: {fileID: 2100000, guid: 427160db012b941479a12f17ce080d2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.393
+    second: {fileID: 2100000, guid: c3a5b4ae119f2b143935ccbb31ae340d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.394
+    second: {fileID: 2100000, guid: 211535a7d7ff4a84b8e3911d4f0d6907, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.395
+    second: {fileID: 2100000, guid: c0563da9de9a066479986155b9fac150, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.396
+    second: {fileID: 2100000, guid: 45e814cad6f78dc49b481a85e28fcf3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.397
+    second: {fileID: 2100000, guid: 8c65999ccd9f093489c346189b5bc419, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.398
+    second: {fileID: 2100000, guid: d09b20cb3fc19f541a43c74658012d5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.399
+    second: {fileID: 2100000, guid: a0ea71f2a3306054f9a3d918865d059b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.400
+    second: {fileID: 2100000, guid: e1d2a38c81998a5498b052c9fd1206d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.401
+    second: {fileID: 2100000, guid: a254dfdf07cbe904982067401b23b847, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.402
+    second: {fileID: 2100000, guid: 849c0c63f52adcc43be858babe9e114f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.403
+    second: {fileID: 2100000, guid: 785de9d8332593140a5451c13fcb9e44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.404
+    second: {fileID: 2100000, guid: d2fbe0d22697db145beb569d41644677, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.405
+    second: {fileID: 2100000, guid: b70de7034f5a8b6439c8a5630b4d386c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.406
+    second: {fileID: 2100000, guid: ac4d9744f140204418dcfea20184d832, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.455
+    second: {fileID: 2100000, guid: 58b0e103861b902439d2978458349047, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.456
+    second: {fileID: 2100000, guid: 47956d550c9905b4e930fdfa4c18c596, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.457
+    second: {fileID: 2100000, guid: 8865ef37e713d9a45a5aae8acc37b204, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.458
+    second: {fileID: 2100000, guid: 3257e8c9e5ace634fae0cd989a62c6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.459
+    second: {fileID: 2100000, guid: d03034c4f63c04e46926f7acd344a3ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.460
+    second: {fileID: 2100000, guid: 92584ed29dbbd694a9d1c1c8284e30ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.461
+    second: {fileID: 2100000, guid: 9495cdfb0f6aae349bdd90ae8821cdab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.462
+    second: {fileID: 2100000, guid: f5b10d0f07db41f46b4e56f2c2fda535, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.463
+    second: {fileID: 2100000, guid: da8958f5ab475964ca4e39b7feec3513, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.464
+    second: {fileID: 2100000, guid: 96566f3bd2011684589d7622b9f35cfb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.465
+    second: {fileID: 2100000, guid: 56fb68c03f3dbd540a7562b47e8dfedc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.466
+    second: {fileID: 2100000, guid: ed3426bb7021832479732a9b49e02971, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.467
+    second: {fileID: 2100000, guid: e2e19e9139963c84da2d7427ec69e07f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.468
+    second: {fileID: 2100000, guid: 044bec25df0052e4189b7fc5c35af551, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.469
+    second: {fileID: 2100000, guid: 3aa92a28d66fec94f9b39bfc386f39bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.470
+    second: {fileID: 2100000, guid: 971a255603b187b479a31ece4e4e5161, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.471
+    second: {fileID: 2100000, guid: 90382865205c22f47b7d1952927c20f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.472
+    second: {fileID: 2100000, guid: 5cba8d916b45b5e4ea71804bd51379d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.473
+    second: {fileID: 2100000, guid: ddd09b352b208114689475e27918362a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.474
+    second: {fileID: 2100000, guid: 71ce44360f447804494178b99dadce83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.475
+    second: {fileID: 2100000, guid: cda38b9cb8b36e04ab44f3cce50bdc9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.476
+    second: {fileID: 2100000, guid: dfe3b46c7102b944e987c2c39c1bc531, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.477
+    second: {fileID: 2100000, guid: 6bf67dacb4130cd469e9a25ec9a9a610, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.478
+    second: {fileID: 2100000, guid: bf22ce1ab48400d4ca31922905cd78ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.479
+    second: {fileID: 2100000, guid: 336e71f744641664ea29ecc60d4d39af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.480
+    second: {fileID: 2100000, guid: d6031c419e46f304485622f11d3bf7f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.481
+    second: {fileID: 2100000, guid: 93a12d22956aec84ab0afd578076db2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.482
+    second: {fileID: 2100000, guid: 49914f5391984d349a22f2e0d4091856, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.483
+    second: {fileID: 2100000, guid: 8ce1feadaceb99748b839ca78f132b12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.484
+    second: {fileID: 2100000, guid: 6cbd5d198320f2c459701f5d4940fba9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.485
+    second: {fileID: 2100000, guid: 56273706cd6dd9341b6cf9bdf781ba8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.486
+    second: {fileID: 2100000, guid: e5a219f90e52d8d4ea5e8c3715d6545b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.487
+    second: {fileID: 2100000, guid: 6d9cf26962449ee4b826653401bc5318, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.488
+    second: {fileID: 2100000, guid: cec5705b6f6cc3b449b4614777a2074e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.489
+    second: {fileID: 2100000, guid: cf8811a11f138b143b9f8cad1525c93f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.490
+    second: {fileID: 2100000, guid: 22c84698b3e64ce49a23497666a006cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.491
+    second: {fileID: 2100000, guid: 11c527a79cf436f448171bb42d51feb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.492
+    second: {fileID: 2100000, guid: 24a9dde4793037040b8c0f68b09ffd66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.493
+    second: {fileID: 2100000, guid: 3d4d2b73f2562a147843ae190f8a42e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.494
+    second: {fileID: 2100000, guid: b61bb487c41382e409313929a90d0b2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.495
+    second: {fileID: 2100000, guid: fe210bffc6e068f489ae90edfbcc89e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.496
+    second: {fileID: 2100000, guid: f9153bb4b3cb7af46a5b8e354079097b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.497
+    second: {fileID: 2100000, guid: b6080df4d002e4d45be12e77902e5007, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.498
+    second: {fileID: 2100000, guid: 1e3a24a8d86002845860c2462ac2bee2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.499
+    second: {fileID: 2100000, guid: f516c0d26d1d3c94abf72cffa13d7a14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.500
+    second: {fileID: 2100000, guid: 7a8beb2d9e89c5e48950b1b004e1199c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.501
+    second: {fileID: 2100000, guid: ef6a666175fd2ce42ac4964ea52ff0d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.502
+    second: {fileID: 2100000, guid: 3937d3ac7d6c3634a838359533ae6c8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.503
+    second: {fileID: 2100000, guid: 528b3b58b62108444a159c600ffff315, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NDS Material.504
+    second: {fileID: 2100000, guid: 24b00fd7a5a6e4b4d9997fc5914672c8, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.158
+    second: {fileID: 2800000, guid: 8b9bbe7b9ce3f914ab3d90aa607ae7fd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.159
+    second: {fileID: 2800000, guid: 2c6aac3f0b51cf84da49bbc7d7904a1d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.160
+    second: {fileID: 2800000, guid: b202968b3661f8843a420327ea793909, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.161
+    second: {fileID: 2800000, guid: 12eb27b50b9c5f34aa3491f7e533d96b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.162
+    second: {fileID: 2800000, guid: 12a698657ac56104aaaa6e6284d68ca8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.163
+    second: {fileID: 2800000, guid: f1b10ccbd0044b2489d5eebe2501a054, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.164
+    second: {fileID: 2800000, guid: eae5874e0a3a7ff4bb08ac783e016d9e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.165
+    second: {fileID: 2800000, guid: 6c44436a2c983cd4fa25908997f82ae2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.166
+    second: {fileID: 2800000, guid: ee38d9a8b155d79438ea43a9d55c57c6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.167
+    second: {fileID: 2800000, guid: b20361ce8ffc2ba4d8ef447577a84338, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.168
+    second: {fileID: 2800000, guid: 7b054f42947e76c458566922e715efdb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.169
+    second: {fileID: 2800000, guid: 3298c4dbd38740b41b945bbe0a7f05b0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.170
+    second: {fileID: 2800000, guid: c75a7ac74842e43408fa9845d8b3b5d3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.171
+    second: {fileID: 2800000, guid: 9e96f166aef2f654bb1bc325975e4699, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.172
+    second: {fileID: 2800000, guid: 36f427b65b9387143855b03418171e17, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.173
+    second: {fileID: 2800000, guid: 8a712352bfb00d442b75a3dd69f0cccc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.174
+    second: {fileID: 2800000, guid: 706979835658cd840b7bc2120eb8d0a8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.175
+    second: {fileID: 2800000, guid: 6a4f8b23f257bd34fbabbe61b8bd6fef, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.176
+    second: {fileID: 2800000, guid: ac1984d62bfcf354aa2e6bc143a0e0c9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.177
+    second: {fileID: 2800000, guid: 55e2bda47d4aa8745b864293888c2a1d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.178
+    second: {fileID: 2800000, guid: 8d786db838220bb479f3cd30988a4b1e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.179
+    second: {fileID: 2800000, guid: 01c126ece425dd3488bd5bca8b669e58, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.180
+    second: {fileID: 2800000, guid: 811f710315b13b1469a099ecc2ad8837, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.181
+    second: {fileID: 2800000, guid: 526fa001c4018f5499e663331342a131, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.182
+    second: {fileID: 2800000, guid: a1776217c7d338047a832d4f88781126, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.183
+    second: {fileID: 2800000, guid: f8cff7ef351817a41aa7710bacc1d64a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.184
+    second: {fileID: 2800000, guid: 534980ff31f228d4bab521748b96754d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.185
+    second: {fileID: 2800000, guid: c34b81b2acee0b041b738623a0563cc6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.186
+    second: {fileID: 2800000, guid: b8abda1bd2836454ab55ae48d53154be, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.187
+    second: {fileID: 2800000, guid: 806ca09302c6fbf4a8a6673e3aee385a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.188
+    second: {fileID: 2800000, guid: c011adb8af4895a4081b37a10403c303, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.189
+    second: {fileID: 2800000, guid: 1d9891fd0a8cf7148a5853d97b8c9274, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.190
+    second: {fileID: 2800000, guid: 45300e13829924346b2a1cb89476f30f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.191
+    second: {fileID: 2800000, guid: 468862107fbf4e840bcf87e023d6703d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.192
+    second: {fileID: 2800000, guid: 79043d3942c74ba4fb6947d7d41d25d7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.193
+    second: {fileID: 2800000, guid: 21131bcd1ba1a934ea35b8d1c2c1bb34, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.194
+    second: {fileID: 2800000, guid: 18d66a3107a068644bf7a035e618d7a2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.195
+    second: {fileID: 2800000, guid: 849b451dffe28f54195af80ca74799f9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.196
+    second: {fileID: 2800000, guid: 3c5aaa367d6791e488748ce95b44c877, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.197
+    second: {fileID: 2800000, guid: 11c6f11e1eb6ccc4190e0c9a8fae7047, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.198
+    second: {fileID: 2800000, guid: b355a09836f502d4ca922118905029e2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.199
+    second: {fileID: 2800000, guid: f6f2d23af4b26044dadd90bfae4c7c9b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.200
+    second: {fileID: 2800000, guid: bdda272c0b288a44da8d396e6f72bb1b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.201
+    second: {fileID: 2800000, guid: 6384373e15a280f4392050c9d9b5759a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.202
+    second: {fileID: 2800000, guid: 2cba8b4663cdb7e49afb379e3af737cf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.203
+    second: {fileID: 2800000, guid: c068f14ac9fa0c2409101b3c51558b75, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.204
+    second: {fileID: 2800000, guid: 70ff162831697564fa6a0f5681c04ba0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.205
+    second: {fileID: 2800000, guid: ce15ea8ee70a09c4e8f77905035ff27c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.206
+    second: {fileID: 2800000, guid: 3fcf17dc846c88b49a9626a7288673d5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.207
+    second: {fileID: 2800000, guid: d662816ab89961c45bf7aa79d0aaa3a0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.208
+    second: {fileID: 2800000, guid: e7b4f773771e66a43916caae5cbce06e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.209
+    second: {fileID: 2800000, guid: 6b642c3c20f89b9408450bd03dc783ff, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.210
+    second: {fileID: 2800000, guid: 001f501d65d746a469e41596e5446c15, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.211
+    second: {fileID: 2800000, guid: dc0a817c1c8cf4549995beddca883db4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.212
+    second: {fileID: 2800000, guid: d6f3f7eeba26adf45957d3062aff03d2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.213
+    second: {fileID: 2800000, guid: 7d7c7fbc310bd4746a93701eb4ec7b85, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.214
+    second: {fileID: 2800000, guid: 673e5b7c1a42fd245be1cb1518b2a19d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.215
+    second: {fileID: 2800000, guid: 232eac374f04d7a488292fda1ebf4617, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.216
+    second: {fileID: 2800000, guid: 99fe8abf508a38c4c9a561a0e4a7a5ff, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.217
+    second: {fileID: 2800000, guid: 259e402c76ae4f3499e38f03c9bc178a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.218
+    second: {fileID: 2800000, guid: b8bb5a13cb7242241a0d034a4e2bbb9d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.219
+    second: {fileID: 2800000, guid: f2c1ceaf13fd3a843bfccaf5ca45b7d7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.220
+    second: {fileID: 2800000, guid: d69710c0856ff4e4098160ea7930126a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.221
+    second: {fileID: 2800000, guid: cdf9c680e2e5b0d439454291f668949b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.222
+    second: {fileID: 2800000, guid: d2e182a2ab7071f4183bebf358b13dbc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.223
+    second: {fileID: 2800000, guid: 31198362ff6eebc459892128427ef447, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.224
+    second: {fileID: 2800000, guid: 10c63eeb7cdc7fa46b8485c27329587b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.225
+    second: {fileID: 2800000, guid: 60d40de5d3453d24997d51fa6872d1c4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.226
+    second: {fileID: 2800000, guid: db2b743be5d0b984697eca38166aec4f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.227
+    second: {fileID: 2800000, guid: 10f917e38df37934899db087b84baa7c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.228
+    second: {fileID: 2800000, guid: b280e1a8254de7c44b9744dedfff177e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.229
+    second: {fileID: 2800000, guid: 048518e9cfd86214295c7aa8ed9249ee, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.230
+    second: {fileID: 2800000, guid: f359311f6c4f93d4e8e7315d310498de, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.231
+    second: {fileID: 2800000, guid: b2363bf115d37494eb4f14fdb9e378a0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.232
+    second: {fileID: 2800000, guid: 8129a74ee8d88e04faec517072ef1c5a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.233
+    second: {fileID: 2800000, guid: 4e6d7f589031ff742b03d1061c8a3cfc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.234
+    second: {fileID: 2800000, guid: a97da885091d6c644b2729b73adaf5bf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.235
+    second: {fileID: 2800000, guid: c546b312836166a4dbe9f33aba6d3e9e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.236
+    second: {fileID: 2800000, guid: 167b010f238de0841bd09b11c910ed6e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.237
+    second: {fileID: 2800000, guid: da47533507a17e449a8d66caee77a6f5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.238
+    second: {fileID: 2800000, guid: 70992c96e253aea4cbbff43237774339, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.239
+    second: {fileID: 2800000, guid: 4f31095905ab8b74fb72ee91e359a788, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.240
+    second: {fileID: 2800000, guid: 3bc833b329b3f6242b746a6203dad6a2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.241
+    second: {fileID: 2800000, guid: 8e6c98cbb3d451841ac95258dffadeac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.242
+    second: {fileID: 2800000, guid: c2cf7c9db86714f4eac0b6b520ba540b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.243
+    second: {fileID: 2800000, guid: 94da9d7f84a6d0b43838df9363aa1109, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.244
+    second: {fileID: 2800000, guid: 6d2e94866ba23e44b8e999dbe0193a12, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.245
+    second: {fileID: 2800000, guid: 77cb0c70a0161a1499a7acbf118b3f30, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.246
+    second: {fileID: 2800000, guid: 443793e826b587c4887b8b85ae7f1dad, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.247
+    second: {fileID: 2800000, guid: f0b638b47d7706d45917ae19e5897b7f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.248
+    second: {fileID: 2800000, guid: 779eff8b66b87ca4b9278dcccec4fa45, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.249
+    second: {fileID: 2800000, guid: 1f431c124d04ac744b4103064c64b5ac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.250
+    second: {fileID: 2800000, guid: 4d2d04f7bf922a4458b686ede3327c89, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.251
+    second: {fileID: 2800000, guid: 05c09590092caef469d4d7c634340d5d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.252
+    second: {fileID: 2800000, guid: d42589824921feb458513d7d90f39a08, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.253
+    second: {fileID: 2800000, guid: dbebea5824acc854289e47dd412c66e2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.254
+    second: {fileID: 2800000, guid: cc8a89c1e3f9b4e40837f6d6cfc66599, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.255
+    second: {fileID: 2800000, guid: fbdf6d0dd2964224e98f6463d46f0b7d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.256
+    second: {fileID: 2800000, guid: a39ea869bf7ff8e48977e77454a891f4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.257
+    second: {fileID: 2800000, guid: 829e61cdafd26bf4fb4dbea6cc14914b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.258
+    second: {fileID: 2800000, guid: 9f2152a2da66c4849b95935f3e08efeb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.259
+    second: {fileID: 2800000, guid: 80e5cae798fe2a143a96c306f7165b29, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.260
+    second: {fileID: 2800000, guid: 792df58a69a37094aa5778bf6d744611, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.261
+    second: {fileID: 2800000, guid: 8c8aa88858ec02d4bb42dcf680b16696, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.262
+    second: {fileID: 2800000, guid: ea7cd7cebb346224cb13c7f63c7fa07c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.263
+    second: {fileID: 2800000, guid: 013a1d0d14c67884482963ba44dc07dc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.264
+    second: {fileID: 2800000, guid: cd8876ed0755a7d4fa99864be1bd6184, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.265
+    second: {fileID: 2800000, guid: 717da0d4f8a4a414f9344c1de5251105, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.266
+    second: {fileID: 2800000, guid: 5e7f6276ff643b843aa3afb477c148cc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.267
+    second: {fileID: 2800000, guid: 0b66540fecc0a964ea1adad3a9916c9b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.268
+    second: {fileID: 2800000, guid: 34c4c1efbbc5de047b2c70a797856787, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.269
+    second: {fileID: 2800000, guid: c92e6f4d081f59e45857d67e8fd7e9ed, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.270
+    second: {fileID: 2800000, guid: b01afe7edc4516048ae75865b53168d6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.271
+    second: {fileID: 2800000, guid: ee45609151e36124f9b9058ba551e088, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.272
+    second: {fileID: 2800000, guid: cacebcc3aeeb4124891bbd31038b3e7e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.273
+    second: {fileID: 2800000, guid: 6124384401916a74aad183580f0146ab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.274
+    second: {fileID: 2800000, guid: b6e17db93f93a194fbd2bd80903d0df1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.275
+    second: {fileID: 2800000, guid: 0dcf15aa624e2224cb31a00a6926ffd0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.276
+    second: {fileID: 2800000, guid: dcf466b2f52f8a942bac911815b642cd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.277
+    second: {fileID: 2800000, guid: 053f31ae17a07054e8aa4f33f70de225, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.278
+    second: {fileID: 2800000, guid: 919632809d837db449646b47c81bce4b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.279
+    second: {fileID: 2800000, guid: 4879e63e6b222e04a943c75b226d0372, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.280
+    second: {fileID: 2800000, guid: e7b8cdebebbb83945bc7e8c0610311dd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.281
+    second: {fileID: 2800000, guid: 9fcf2ff7dc8dfdb4a9c65634eeaa8618, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.282
+    second: {fileID: 2800000, guid: 23e6fc8bcd67e684c928d39ad9e24195, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.283
+    second: {fileID: 2800000, guid: eb7a1eee93dbea54988a03a94687d17b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.284
+    second: {fileID: 2800000, guid: 2da1e366bec82eb40b61b4a7eea3a423, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.285
+    second: {fileID: 2800000, guid: b5c1d8d800cc24d49b24ec397615879d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.286
+    second: {fileID: 2800000, guid: 7bc2a3d1d2f4ff3469fafd8f2fccbca2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.287
+    second: {fileID: 2800000, guid: 56900eae13976894c8636fd0e88af85e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.288
+    second: {fileID: 2800000, guid: 93f2439515bc5df41a13f64b6ad153cd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.289
+    second: {fileID: 2800000, guid: f4b4203d7582e9048bc26de59c0cf8dd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.290
+    second: {fileID: 2800000, guid: 266ddcc57d52b804d86407142864db43, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.291
+    second: {fileID: 2800000, guid: 4d67a82b2c09e8b479f5ecd84cfceb23, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.292
+    second: {fileID: 2800000, guid: 33d5c75deb14ef44a92a90360cf40049, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.293
+    second: {fileID: 2800000, guid: a5eb709e44d950343bc4da1c84b2e08f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.294
+    second: {fileID: 2800000, guid: dca412d16ce29e84080aea70616975c6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.295
+    second: {fileID: 2800000, guid: eb950b46b8342f242b3c784217dac86c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.296
+    second: {fileID: 2800000, guid: 77e05074f0b2e0d429c4f2416c144682, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.297
+    second: {fileID: 2800000, guid: 07db18f44a8124a4a8acce43b0c7e6ce, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.298
+    second: {fileID: 2800000, guid: 1ac1bb07ffe8cfc46b3c24a109dddeed, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.299
+    second: {fileID: 2800000, guid: cfd45f7c44c1aa844be652fb4459839e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.343
+    second: {fileID: 2800000, guid: a00c191b20288bb43bafceecac1b20d1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.344
+    second: {fileID: 2800000, guid: e2d14c53994276e40b259d35a1210ce8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.345
+    second: {fileID: 2800000, guid: 854863816553e9a40b19913d09afb584, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.346
+    second: {fileID: 2800000, guid: 44751978357cdfb4386846489b345773, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.347
+    second: {fileID: 2800000, guid: c694e9cb029d9ad4f8a86ea5f19f1783, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.348
+    second: {fileID: 2800000, guid: a528284d38126ca4b8bf7f5d8c59f580, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.349
+    second: {fileID: 2800000, guid: c6630adb0185b2b4d9beb99d36ad2cde, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.350
+    second: {fileID: 2800000, guid: 6b7c16bbd1870c54c804637621f228fe, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.351
+    second: {fileID: 2800000, guid: a290b4e8a6f9ec24599cdaef0547396f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.352
+    second: {fileID: 2800000, guid: 5d54ad69cb56d764aa5c446b3ae31bac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.353
+    second: {fileID: 2800000, guid: 3100d27868f24dc4fad3256cfb4348ac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.354
+    second: {fileID: 2800000, guid: 8b280d726de86cf489978a191c85a573, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.355
+    second: {fileID: 2800000, guid: fbee2a331c382d5439611bcb58a3635a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.356
+    second: {fileID: 2800000, guid: fa6496522c41c6a4f907c7b31d59e613, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.357
+    second: {fileID: 2800000, guid: f5860cd7918f03b4f8d5aac1e080133b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.358
+    second: {fileID: 2800000, guid: 0fe25e8b10d6b8b44b73329d05cdafc8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.359
+    second: {fileID: 2800000, guid: 39c56f9882601c348986fc2f6ee033e3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.360
+    second: {fileID: 2800000, guid: 497187ee94d724342b9eb6ad3d60bc43, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.361
+    second: {fileID: 2800000, guid: 308b6cb04a71ea048b817dec8a7e3724, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.362
+    second: {fileID: 2800000, guid: 92790851853c71e4a933fc922b6a99aa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.363
+    second: {fileID: 2800000, guid: 53eccf543ed1f0544a37a88dbf3d094d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.364
+    second: {fileID: 2800000, guid: d1a6033fa65b94b4f9d4bfb6db8c16f1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.365
+    second: {fileID: 2800000, guid: 67072e60b84a94041802be1857fe4495, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.366
+    second: {fileID: 2800000, guid: e210a182efe1aed43865171548250411, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.367
+    second: {fileID: 2800000, guid: aa92189d197049f429da9845e425cf2d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.368
+    second: {fileID: 2800000, guid: a195d0d5e8dec0e47b2a76067e6dd9eb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.369
+    second: {fileID: 2800000, guid: 655f88cc7b8c0bf4ca0ad62eb7f393ae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.370
+    second: {fileID: 2800000, guid: 77b2c3c5a7f6cb54ba56c01d0dbad96d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.371
+    second: {fileID: 2800000, guid: e3d1f73a7f4054a4991ad5d8c3ba8d41, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.372
+    second: {fileID: 2800000, guid: 146cd23ca2450dd43a134251f1665427, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.373
+    second: {fileID: 2800000, guid: 0e798ec199c7dc14bb8de6ede7a3523e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.374
+    second: {fileID: 2800000, guid: 990d08fa582d9204f8615b9ffc8aac8f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.375
+    second: {fileID: 2800000, guid: dde1873cbc7697f4486d330735e2a532, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.376
+    second: {fileID: 2800000, guid: 297d2723304131c48bb3fcb8b2456b47, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.377
+    second: {fileID: 2800000, guid: 162ccea42091f8e49afa300ace5d9356, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.378
+    second: {fileID: 2800000, guid: 9b56d1877186d8e4abbdcf918c335c42, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.379
+    second: {fileID: 2800000, guid: fc30b4a317afb0c48917e12df52e59ef, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.380
+    second: {fileID: 2800000, guid: a27acdba1c43ccb45963d4aaf7c7eb73, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.381
+    second: {fileID: 2800000, guid: 51c74c74df3e838468bc9b64a77fbcee, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.382
+    second: {fileID: 2800000, guid: c59cc1697a9e0ea4298e7a64df1cf04e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.383
+    second: {fileID: 2800000, guid: be7a65ccdc542f140b002bbc0a30e4ef, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.384
+    second: {fileID: 2800000, guid: d051b5e5b6e2a9248aa378e81f90358f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.385
+    second: {fileID: 2800000, guid: db662d0d55bb2b84fb426feb9d6d2b99, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.386
+    second: {fileID: 2800000, guid: 13704f570b2f4254f9f9339b99650167, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.387
+    second: {fileID: 2800000, guid: 3d75baef645af2b439a023c510487c11, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.388
+    second: {fileID: 2800000, guid: 00f737d0f7e3b6145aadac65f208c957, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.389
+    second: {fileID: 2800000, guid: dde4096edf0202241982c1961f0c5db3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.390
+    second: {fileID: 2800000, guid: e9a17df38b0fe3c4c896dc95d09f94d0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.391
+    second: {fileID: 2800000, guid: 570d43243b65519478eef4e1842e24a8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.392
+    second: {fileID: 2800000, guid: 2e4c97e82c0a12c49ae1eab43c047c53, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.393
+    second: {fileID: 2800000, guid: 126d64da991a7264c9d422d9e7ea59f9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.394
+    second: {fileID: 2800000, guid: 180fdde88a8b5864389e02d07765a67c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.395
+    second: {fileID: 2800000, guid: e8ab61ea3b4a108479289af1ad798dc4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.396
+    second: {fileID: 2800000, guid: 8d099a9573cd9ae4da1a3a96a41cd6ce, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.397
+    second: {fileID: 2800000, guid: 9a864e843390ef245b32a66d11eb5944, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.398
+    second: {fileID: 2800000, guid: 9eb948a85fb743f4a814b09af32e5e31, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.399
+    second: {fileID: 2800000, guid: 83231a2ce2eb4e84cb21e8b254ee83ac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.400
+    second: {fileID: 2800000, guid: fdbe57032e768f74691f894e78dd3ad2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.401
+    second: {fileID: 2800000, guid: b15ca6d07aaf38d41a4ecd7ed2332399, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.450
+    second: {fileID: 2800000, guid: 90c258052643b7b4ea3eb7cb6cdb6a59, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.451
+    second: {fileID: 2800000, guid: 7fbe294adc3ffd1468282d449967882a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.452
+    second: {fileID: 2800000, guid: 0a70d9154ab028f45baf70a87d47d653, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.453
+    second: {fileID: 2800000, guid: 83721e5681a073e49a9d96e85830ae24, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.454
+    second: {fileID: 2800000, guid: db3cafc77f00e84439e4141a06c608bc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.455
+    second: {fileID: 2800000, guid: b16889b650ad28243986d6ccd524f9a0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.456
+    second: {fileID: 2800000, guid: ca1bc53f922976544b9c9387e06962f9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.457
+    second: {fileID: 2800000, guid: da869becd3658b8448875c482cb130e0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.458
+    second: {fileID: 2800000, guid: 5c0f50773fe93164eb611b4a3283cb02, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.459
+    second: {fileID: 2800000, guid: 14dba973599eb544f8c2f05c4f9e8ffc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.460
+    second: {fileID: 2800000, guid: 4aac6e60b4df94b40a7fa191f025a9a2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.461
+    second: {fileID: 2800000, guid: 1a910f207e0cf2240ad32d54f2ea833f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.462
+    second: {fileID: 2800000, guid: 30bb67b8d3e83c043a3ecd04f56dc8e0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.463
+    second: {fileID: 2800000, guid: daa92d88131e5e34a91aae8f1b8361d4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.464
+    second: {fileID: 2800000, guid: 72e8bba17e70c904c9ff38eb2679927a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.465
+    second: {fileID: 2800000, guid: ef7c0a3b9bfc66144ba1a0ff1f03fa2d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.466
+    second: {fileID: 2800000, guid: dd231ed1c097a0b44834c5aa69dbf801, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.467
+    second: {fileID: 2800000, guid: de8536303933d814297d2538802230c1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.468
+    second: {fileID: 2800000, guid: 23f7d74dc5e6508448f9d4470f7a293c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.469
+    second: {fileID: 2800000, guid: 3ec67a7ca9cd3c0449913b80cac1a415, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.470
+    second: {fileID: 2800000, guid: 2cb01cd91a45fbc479c91518f102db2d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.471
+    second: {fileID: 2800000, guid: a6bc4fb7ce6a15e48ab4d52a623e248a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.472
+    second: {fileID: 2800000, guid: 5d6d3e494cefc614a8aa08cde5b02a9e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.473
+    second: {fileID: 2800000, guid: e908a5c5f44d9f440b3e40e7647fae66, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.474
+    second: {fileID: 2800000, guid: 3ee2eae40d4c5c14f98431aff593da14, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.475
+    second: {fileID: 2800000, guid: 3c4ba7107e7eda6499671f5332073493, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.476
+    second: {fileID: 2800000, guid: d2944e18d328b554395d5d69311ace02, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.477
+    second: {fileID: 2800000, guid: 29b4c13054aa7ab47a8d7b6d899a86c1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.478
+    second: {fileID: 2800000, guid: 3c050d95f7ce35845a0e289cdb2daff6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.479
+    second: {fileID: 2800000, guid: 90f1b32b070e4e542ad576327d427c7d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.480
+    second: {fileID: 2800000, guid: fe71be7ac9fd1c746898ba0dffc57a0b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.481
+    second: {fileID: 2800000, guid: b45232f60d0cc784db60293cbf40e034, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.482
+    second: {fileID: 2800000, guid: 7d037c0f14e9568429922b4720cd2bdf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.483
+    second: {fileID: 2800000, guid: 64ddb405d9f54924dbd2b5fab863eb8c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.484
+    second: {fileID: 2800000, guid: 7ce7486c440bd644eb0e89efadcb227a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.485
+    second: {fileID: 2800000, guid: 13e6145f29e07d047b67d74feec671c3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.486
+    second: {fileID: 2800000, guid: b926a7f0898e67045ba86e1143e765a8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.487
+    second: {fileID: 2800000, guid: 46cb3931e1fc7914f8ea2bbeb50d127c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.488
+    second: {fileID: 2800000, guid: ce9651c7452b4e1418a338bdd330f0f5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.489
+    second: {fileID: 2800000, guid: cc0bebf09c133b942a34575c47a9f3ae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.490
+    second: {fileID: 2800000, guid: 9801b187579fe9546b963270de234db1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.491
+    second: {fileID: 2800000, guid: 789d7345b772acb449477b112d236bb2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.492
+    second: {fileID: 2800000, guid: 1627ca4b983da124fb6af23bec7d3be9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.493
+    second: {fileID: 2800000, guid: 854cfa5b71a06084d99ecc7b8cd5f75c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.494
+    second: {fileID: 2800000, guid: ae6d760b482dbfb4aa8d31ea11c27749, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.495
+    second: {fileID: 2800000, guid: 7ef56220f3934a54983bd5d9468667e6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.496
+    second: {fileID: 2800000, guid: 5f39e7b106098384ab2dc1a72d4ccc3b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NDS Texture.497
+    second: {fileID: 2800000, guid: 3ddda173bb6fe224597b7bfcc33fbde4, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
