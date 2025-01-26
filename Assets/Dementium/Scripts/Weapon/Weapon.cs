@@ -22,8 +22,6 @@ public abstract class Weapon : MonoBehaviour
     }
 
     public abstract void Fire();
-    public abstract void Reload();
-    public abstract void EjectMagazine();
 
     protected void PlaySound(AudioClip clip)
     {

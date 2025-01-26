@@ -10,12 +10,11 @@ public class Pistol : Weapon
     public GameObject bulletPrefab;
     public Transform ejectionPort;
     public GameObject shellPrefab;
-    public Transform slide; // Culasse
+    public Transform slide;
     public float slideBackDistance = 0.1f;
     public float slideSpeed = 0.05f;
 
-    private XRGrabInteractable grabInteractable;
-    private Magazine currentMagazine;
+    public Magazine currentMagazine;
     private bool isReloading = false;
 
     void Start()
@@ -23,8 +22,6 @@ public class Pistol : Weapon
         currentAmmo = 0; // Pas de munitions au départ
         hasChamberedRound = false;
 
-        grabInteractable = GetComponent<XRGrabInteractable>();
-        grabInteractable.selectExited.AddListener(OnDeselect);
     }
 
     public override void Fire()
@@ -89,16 +86,8 @@ public class Pistol : Weapon
         slide.localPosition = originalPosition;
     }
 
-    public override void Reload()
-    {
-        // Simule l'insertion d'un chargeur
-        if (currentMagazine != null)
-        {
-            currentAmmo = currentMagazine.AmmoCount;
-        }
-    }
-
-    public override void EjectMagazine()
+    [ContextMenu("Debug Eject Magazine")]
+    public void EjectMagazine()
     {
         if (currentMagazine == null) return;
 

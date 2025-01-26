@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Magazine : MonoBehaviour
 {
-    public int AmmoCount = 10;
+    private int ammo = 10;
     private bool isSnapped = false;
 
     public void Eject()
@@ -19,24 +19,24 @@ public class Magazine : MonoBehaviour
         isSnapped = false;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Weapon"))
-        {
-            Weapon weapon = other.GetComponent<Weapon>();
-            if (weapon != null && !isSnapped)
-            {
-                SnapToWeapon(weapon);
-            }
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Weapon"))
+    //    {
+    //        Weapon weapon = other.GetComponent<Weapon>();
+    //        if (weapon != null && !isSnapped)
+    //        {
+    //            SnapToWeapon(weapon);
+    //        }
+    //    }
+    //}
 
-    private void SnapToWeapon(Weapon weapon)
-    {
-        transform.position = weapon.magazineSlot.position;
-        transform.rotation = weapon.magazineSlot.rotation;
-        transform.SetParent(weapon.transform);
+    //private void SnapToWeapon(Weapon weapon)
+    //{
+    //    transform.position = weapon.magazineSlot.position;
+    //    transform.rotation = weapon.magazineSlot.rotation;
+    //    transform.SetParent(weapon.transform);
 
-        isSnapped = true;
-    }
+    //    isSnapped = true;
+    //}
 }

@@ -36,7 +36,6 @@ public class DOFConstraint
     public UnityEvent onMaxTranslationLimitReached;
     public UnityEvent onMinRotationLimitReached;
     public UnityEvent onMaxRotationLimitReached;
-
 }
 
 public class ConstrainedGrabbable : Grabbable
@@ -47,24 +46,25 @@ public class ConstrainedGrabbable : Grabbable
     private Vector3 initialLocalPosition;
     private Vector3 initialLocalRotation;
 
+    private Vector3 grabberInitialPosition; // Référence initiale de position du Grabber
+    private Quaternion grabberInitialRotation; // Référence initiale de rotation du Grabber
+
     new void Start()
     {
         base.Start();
 
         initialLocalPosition = transform.localPosition; // Stockage de la position initiale
         initialLocalRotation = transform.localEulerAngles; // Stockage de la rotation initiale
-
     }
-
 
     new void Update()
     {
-        base.Update();
 
         if (grabbed && target != null)
         {
-            // Local translations
-            Vector3 targetLocalPosition = transform.parent.InverseTransformPoint(target.position);
+            // Calcul des translations locales par rapport à la position initiale du Grabber
+            Vector3 grabberDeltaPosition = target.position - grabberInitialPosition;
+            Vector3 targetLocalPosition = transform.parent.InverseTransformPoint(transform.parent.position + grabberDeltaPosition);
             Vector3 constrainedLocalPosition = transform.localPosition;
 
             if (dofConstraint.enableLocalTranslationX)
@@ -85,9 +85,9 @@ public class ConstrainedGrabbable : Grabbable
                 TriggerTranslationEvent(constrainedLocalPosition.z, previousLocalPosition.z, dofConstraint.minLocalTranslationZ, dofConstraint.maxLocalTranslationZ);
             }
 
-            // Local rotations
-            Quaternion targetLocalRotation = Quaternion.Inverse(transform.parent.rotation) * target.rotation;
-            Vector3 targetLocalEulerAngles = targetLocalRotation.eulerAngles;
+            // Calcul des rotations locales par rapport à la rotation initiale du Grabber
+            Quaternion grabberDeltaRotation = target.rotation * Quaternion.Inverse(grabberInitialRotation);
+            Vector3 targetLocalEulerAngles = (grabberDeltaRotation * Quaternion.Euler(initialLocalRotation)).eulerAngles;
             Vector3 constrainedLocalRotation = transform.localEulerAngles;
 
             if (dofConstraint.enableLocalRotationX)
@@ -108,46 +108,24 @@ public class ConstrainedGrabbable : Grabbable
                 TriggerRotationEvent(constrainedLocalRotation.z, previousLocalRotation.z, dofConstraint.minLocalRotationZ, dofConstraint.maxLocalRotationZ);
             }
 
-            // Apply constraints
+            // Appliquer les transformations contraintes
             transform.localPosition = constrainedLocalPosition;
             transform.localEulerAngles = constrainedLocalRotation;
 
-            // Save positions/rotations for events
+            // Sauvegarder les positions/rotations pour les événements
             previousLocalPosition = constrainedLocalPosition;
             previousLocalRotation = constrainedLocalRotation;
-
-        }
-    }
-
-    private void TriggerTranslationEvent(float current, float previous, float min, float max)
-    {
-        if (current <= min && previous > min)
-        {
-            dofConstraint.onMinTranslationLimitReached?.Invoke();
-        }
-        if (current >= max && previous < max)
-        {
-            dofConstraint.onMaxTranslationLimitReached?.Invoke();
-        }
-    }
-
-    private void TriggerRotationEvent(float current, float previous, float min, float max)
-    {
-        if (current <= min && previous > min)
-        {
-            dofConstraint.onMinRotationLimitReached?.Invoke();
-        }
-        if (current >= max && previous < max)
-        {
-            dofConstraint.onMaxRotationLimitReached?.Invoke();
         }
     }
 
     public override void Grab(Grabber grabber)
     {
         base.Grab(grabber);
-    }
 
+        // Stocker la transformation initiale du Grabber
+        grabberInitialPosition = grabber.GrabTransform.position;
+        grabberInitialRotation = grabber.GrabTransform.rotation;
+    }
 
     public override void Release(Grabber grabber)
     {
@@ -181,4 +159,27 @@ public class ConstrainedGrabbable : Grabbable
         transform.localEulerAngles = initialLocalRotation;
     }
 
+    private void TriggerTranslationEvent(float current, float previous, float min, float max)
+    {
+        if (current <= min && previous > min)
+        {
+            dofConstraint.onMinTranslationLimitReached?.Invoke();
+        }
+        if (current >= max && previous < max)
+        {
+            dofConstraint.onMaxTranslationLimitReached?.Invoke();
+        }
+    }
+
+    private void TriggerRotationEvent(float current, float previous, float min, float max)
+    {
+        if (current <= min && previous > min)
+        {
+            dofConstraint.onMinRotationLimitReached?.Invoke();
+        }
+        if (current >= max && previous < max)
+        {
+            dofConstraint.onMaxRotationLimitReached?.Invoke();
+        }
+    }
 }

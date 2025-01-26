@@ -14,6 +14,9 @@ public class Grabbable : MonoBehaviour
     public UnityEvent onActivateStart;
     public UnityEvent onActivateStop;
 
+    public UnityEvent onPrimary;
+    public UnityEvent onSecondary;
+
     protected bool grabbed;
     protected Rigidbody rb;
     protected Transform target;
@@ -28,7 +31,6 @@ public class Grabbable : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected void Start()
     {
-        
         rb = GetComponent<Rigidbody>();
     }
 
@@ -64,6 +66,7 @@ public class Grabbable : MonoBehaviour
         {
             onHoverExit?.Invoke();
             grabber.grabAction.action.started -= OnGrabActionStarted;
+
             currentGrabber = null; // Nettoyer le Grabber actif
         }
     }
@@ -71,6 +74,9 @@ public class Grabbable : MonoBehaviour
     public virtual void Grab(Grabber grabber)
     {
         grabber.grabAction.action.canceled += OnGrabActionCanceled;
+        grabber.primaryAction.action.started += OnPrimaryStarted;
+
+
 
         onGrabStart?.Invoke();
         grabbed = true;
@@ -83,6 +89,7 @@ public class Grabbable : MonoBehaviour
         Debug.Log("Release Parent");
 
         grabber.grabAction.action.canceled -= OnGrabActionCanceled;
+        grabber.primaryAction.action.started -= OnPrimaryStarted;
 
         onGrabStop?.Invoke();
         grabbed = false;
@@ -104,6 +111,14 @@ public class Grabbable : MonoBehaviour
         if (currentGrabber != null) // Vérifie si un Grabber est actif
         {
             Release(currentGrabber);
+        }
+    }
+
+    private void OnPrimaryStarted(InputAction.CallbackContext context)
+    {
+        if (currentGrabber != null) // Vérifie si un Grabber est actif
+        {
+            onPrimary?.Invoke();
         }
     }
 }
