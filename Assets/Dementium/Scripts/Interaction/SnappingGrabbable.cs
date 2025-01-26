@@ -12,8 +12,27 @@ public class SnappingGrabbable : Grabbable
 
         if (grabbed && currentSnappingZone != null)
         {
+            // Vérifie si on doit sortir du mode snap
+            CheckExitSnap();
+
             // Applique les contraintes dynamiques si on est dans une zone de snapping
             ApplySliderConstraint();
+        }
+    }
+
+    private void CheckExitSnap()
+    {
+        if (currentSnappingZone == null) return;
+
+        // Calcule la distance entre le grabber et la zone
+        float distanceToZone = Vector3.Distance(target.position, currentSnappingZone.transform.position);
+
+        // Si on dépasse la distance maximale, on quitte le mode snap
+        if (distanceToZone > currentSnappingZone.maxSnapDistance)
+        {
+            currentSnappingZone = null;
+            startPoint = null;
+            endPoint = null;
         }
     }
 
@@ -35,8 +54,11 @@ public class SnappingGrabbable : Grabbable
         // Recalcule la position contrainte
         Vector3 constrainedPosition = startPoint.position + slideDirection * clampedDistance;
 
-        // Mélange avec le mouvement du grabber
-        transform.position = Vector3.Lerp(transform.position, constrainedPosition, Time.deltaTime * 15f);
+        // Applique la position contrainte
+        transform.position = constrainedPosition;
+
+        // Applique la rotation de l'endPoint
+        transform.rotation = endPoint.rotation;
     }
 
     private void OnTriggerEnter(Collider other)
