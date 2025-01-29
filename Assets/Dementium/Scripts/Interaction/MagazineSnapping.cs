@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MagazineSnapping : MonoBehaviour
 {
-    private SnappingZone currentSnappingZone; // Référence à la zone actuelle
+    private SnappingMagazineZone currentSnappingZone; // Référence à la zone actuelle
     private Rigidbody rb;
     private bool isGrabbed = false; // Indique si l'objet est actuellement grabé
     private Transform startPoint;   // Point de départ de la glissière (dépend de la zone)
@@ -25,7 +25,7 @@ public class MagazineSnapping : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Vérifie si l'objet entre dans une zone de snapping
-        SnappingZone snappingZone = other.GetComponent<SnappingZone>();
+        SnappingMagazineZone snappingZone = other.GetComponent<SnappingMagazineZone>();
         if (snappingZone != null && snappingZone.CanSnap(gameObject))
         {
             // Stocke la référence à la zone et configure les points
@@ -38,7 +38,7 @@ public class MagazineSnapping : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // Vérifie si l'objet sort de la zone de snapping
-        if (currentSnappingZone != null && other.GetComponent<SnappingZone>() == currentSnappingZone)
+        if (currentSnappingZone != null && other.GetComponent<SnappingMagazineZone>() == currentSnappingZone)
         {
             // Réinitialise la référence
             currentSnappingZone = null;

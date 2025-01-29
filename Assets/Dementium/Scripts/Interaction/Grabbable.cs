@@ -17,11 +17,13 @@ public class Grabbable : MonoBehaviour
     public UnityEvent onPrimary;
     public UnityEvent onSecondary;
 
+    protected bool grabbable = true;
     protected bool grabbed;
+
     protected Rigidbody rb;
     protected Transform target;
 
-    private Grabber currentGrabber; // Référence explicite au Grabber actif
+    protected Grabber currentGrabber; // Référence explicite au Grabber actif
 
     protected Vector3 previousLocalPosition;
     protected Vector3 previousLocalRotation;
@@ -38,9 +40,18 @@ public class Grabbable : MonoBehaviour
 
     protected void Update()
     {
+        UpdateRigidbody();
+        UpdateTransform();
+    }
+
+    protected virtual void UpdateRigidbody()
+    {
         if (rb)
             rb.isKinematic = grabbed;
+    }
 
+    protected virtual void UpdateTransform()
+    {
         if (grabbed && target)
         {
             transform.position = target.position;
@@ -50,36 +61,46 @@ public class Grabbable : MonoBehaviour
 
     protected void OnTriggerEnter(Collider other)
     {
-        Grabber grabber = other.GetComponent<Grabber>();
-        if (!grabbed && grabber)
+        if (grabbable)
         {
-            currentGrabber = grabber; // Assigner le Grabber actif
-            onHoverEnter?.Invoke();
-            grabber.grabAction.action.started += OnGrabActionStarted;
+            Grabber grabber = other.GetComponent<Grabber>();
+            if (!grabbed && grabber && !grabber.Grabbing)
+            {
+                currentGrabber = grabber; // Assigner le Grabber actif
+                onHoverEnter?.Invoke();
+                grabber.grabAction.action.started += OnGrabActionStarted;
+            }
         }
     }
 
     protected void OnTriggerExit(Collider other)
     {
-        Grabber grabber = other.GetComponent<Grabber>();
-        if (!grabbed && grabber && grabber == currentGrabber)
+        if (grabbable)
         {
-            onHoverExit?.Invoke();
-            grabber.grabAction.action.started -= OnGrabActionStarted;
+            Grabber grabber = other.GetComponent<Grabber>();
+            if (!grabbed && grabber && grabber == currentGrabber)
+            {
+                onHoverExit?.Invoke();
+                grabber.grabAction.action.started -= OnGrabActionStarted;
 
-            currentGrabber = null; // Nettoyer le Grabber actif
+                currentGrabber = null; // Nettoyer le Grabber actif
+            }
         }
     }
 
     public virtual void Grab(Grabber grabber)
     {
+        currentGrabber = grabber;
+
         grabber.grabAction.action.canceled += OnGrabActionCanceled;
         grabber.primaryAction.action.started += OnPrimaryStarted;
-
+        grabber.triggerAction.action.started += OnActivateStarted;
+        grabber.triggerAction.action.canceled += OnActivateCanceled;
 
 
         onGrabStart?.Invoke();
         grabbed = true;
+        grabber.Grabbing = true;
 
         target = grabber.GrabTransform;
     }
@@ -90,15 +111,18 @@ public class Grabbable : MonoBehaviour
 
         grabber.grabAction.action.canceled -= OnGrabActionCanceled;
         grabber.primaryAction.action.started -= OnPrimaryStarted;
+        grabber.triggerAction.action.started -= OnActivateStarted;
+        grabber.triggerAction.action.canceled -= OnActivateCanceled;
 
         onGrabStop?.Invoke();
         grabbed = false;
+        grabber.Grabbing = false;
         target = null;
         currentGrabber = null; // Nettoyer le Grabber actif
     }
 
     // Méthodes de callback
-    private void OnGrabActionStarted(InputAction.CallbackContext context)
+    protected void OnGrabActionStarted(InputAction.CallbackContext context)
     {
         if (currentGrabber != null) // Vérifie si un Grabber est actif
         {
@@ -106,7 +130,7 @@ public class Grabbable : MonoBehaviour
         }
     }
 
-    private void OnGrabActionCanceled(InputAction.CallbackContext context)
+    protected void OnGrabActionCanceled(InputAction.CallbackContext context)
     {
         if (currentGrabber != null) // Vérifie si un Grabber est actif
         {
@@ -114,7 +138,23 @@ public class Grabbable : MonoBehaviour
         }
     }
 
-    private void OnPrimaryStarted(InputAction.CallbackContext context)
+    protected void OnActivateStarted(InputAction.CallbackContext context)
+    {
+        if (currentGrabber != null) // Vérifie si un Grabber est actif
+        {
+            onActivateStart?.Invoke();
+        }
+    }
+
+    protected void OnActivateCanceled(InputAction.CallbackContext context)
+    {
+        if (currentGrabber != null) // Vérifie si un Grabber est actif
+        {
+            onActivateStop?.Invoke();
+        }
+    }
+
+    protected void OnPrimaryStarted(InputAction.CallbackContext context)
     {
         if (currentGrabber != null) // Vérifie si un Grabber est actif
         {

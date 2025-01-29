@@ -10,8 +10,11 @@ public abstract class Weapon : MonoBehaviour
     public AudioClip reloadSound;
     public AudioSource audioSource;
 
-    public Transform magazineSlot; // Point où le chargeur s'insère
-    public bool hasChamberedRound = false; // Une balle est-elle dans la chambre ?
+    public bool hasChamberedRound = true;
+
+    protected Magazine currentMagazine;
+
+    public Magazine CurrentMagazine { get => currentMagazine; set => currentMagazine = value; }
 
     protected virtual void Awake()
     {

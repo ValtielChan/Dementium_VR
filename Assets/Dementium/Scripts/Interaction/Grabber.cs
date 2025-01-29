@@ -10,6 +10,8 @@ public class Grabber : MonoBehaviour
     public InputActionReference primaryAction;
     public InputActionReference secondaryAction;
 
+    private bool grabbing;
+
     [SerializeField]
     private Transform grabTransform;
 
@@ -25,6 +27,8 @@ public class Grabber : MonoBehaviour
             }
         } 
     }
+
+    public bool Grabbing { get => grabbing; set => grabbing = value; }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
