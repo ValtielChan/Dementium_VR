@@ -14,9 +14,7 @@ public class Magazine : Grabbable
 
     private bool snapped;
 
-    private int ammo = 7;
-
-    public int Ammo { get => ammo; set => ammo = value; }
+    public int ammo = 7;
 
     protected new void Update()
     {
@@ -36,7 +34,7 @@ public class Magazine : Grabbable
 
             if (!grabbed && Vector3.Distance(transform.position, startPoint.position) < 0.01f)
             {
-                collider.isTrigger = false;
+                collider.enabled = true;
                 Emancipate();
             }
         }
@@ -73,7 +71,7 @@ public class Magazine : Grabbable
                 onSnap?.Invoke();
                 Release(currentGrabber);
 
-                collider.isTrigger = true;
+                collider.enabled = false;
                 rb.isKinematic = true;
 
             }

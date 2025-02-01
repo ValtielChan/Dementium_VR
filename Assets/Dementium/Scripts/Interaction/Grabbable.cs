@@ -94,6 +94,7 @@ public class Grabbable : MonoBehaviour
 
         grabber.grabAction.action.canceled += OnGrabActionCanceled;
         grabber.primaryAction.action.started += OnPrimaryStarted;
+        grabber.secondaryAction.action.started += OnSecondaryStarted;
         grabber.triggerAction.action.started += OnActivateStarted;
         grabber.triggerAction.action.canceled += OnActivateCanceled;
 
@@ -111,6 +112,7 @@ public class Grabbable : MonoBehaviour
 
         grabber.grabAction.action.canceled -= OnGrabActionCanceled;
         grabber.primaryAction.action.started -= OnPrimaryStarted;
+        grabber.secondaryAction.action.started -= OnSecondaryStarted;
         grabber.triggerAction.action.started -= OnActivateStarted;
         grabber.triggerAction.action.canceled -= OnActivateCanceled;
 
@@ -159,6 +161,14 @@ public class Grabbable : MonoBehaviour
         if (currentGrabber != null) // Vérifie si un Grabber est actif
         {
             onPrimary?.Invoke();
+        }
+    }
+
+    protected void OnSecondaryStarted(InputAction.CallbackContext context)
+    {
+        if (currentGrabber != null) // Vérifie si un Grabber est actif
+        {
+            onSecondary?.Invoke();
         }
     }
 }

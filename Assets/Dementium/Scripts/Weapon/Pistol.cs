@@ -29,8 +29,6 @@ public class Pistol : Weapon
             slideOriginalPosition = slide.localPosition;
         }
 
-        // Initialisation des munitions
-        hasChamberedRound = false; // Pas de balle dans la chambre
     }
 
     public override void Fire()
@@ -130,10 +128,10 @@ public class Pistol : Weapon
         // Data
         hasChamberedRound = false;
 
-        if (currentMagazine && currentMagazine.Ammo > 0)
+        if (currentMagazine && currentMagazine.ammo > 0)
         {
             hasChamberedRound = true;
-            currentMagazine.Ammo -= 1;
+            currentMagazine.ammo -= 1;
         }
     }
 

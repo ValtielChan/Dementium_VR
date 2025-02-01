@@ -60,6 +60,8 @@ public class ConstrainedGrabbable : Grabbable
     new void Update()
     {
 
+
+
         if (grabbed && target != null)
         {
             // Calcul des translations locales par rapport à la position initiale du Grabber
@@ -123,8 +125,8 @@ public class ConstrainedGrabbable : Grabbable
         base.Grab(grabber);
 
         // Stocker la transformation initiale du Grabber
-        grabberInitialPosition = grabber.GrabTransform.position;
-        grabberInitialRotation = grabber.GrabTransform.rotation;
+        grabberInitialPosition = grabber.transform.position;
+        grabberInitialRotation = grabber.transform.rotation;
     }
 
     public override void Release(Grabber grabber)
@@ -153,6 +155,8 @@ public class ConstrainedGrabbable : Grabbable
 
             yield return null;
         }
+
+        dofConstraint.onMaxTranslationLimitReached?.Invoke();
 
         // Position finale pour éviter les imprécisions
         transform.localPosition = initialLocalPosition;
