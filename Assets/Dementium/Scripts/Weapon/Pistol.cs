@@ -8,7 +8,6 @@ public class Pistol : Weapon
 {
     [Header("Pistol Settings")]
     public Transform muzzle; // Point de sortie des balles
-    public GameObject bulletPrefab; // Préfabriqué de la balle
     public Transform ejectionPort; // Point d'éjection des douilles
     public GameObject shellPrefab; // Préfabriqué de la douille
     public Transform slide; // Partie mobile de l'arme (coulisse)
@@ -31,7 +30,6 @@ public class Pistol : Weapon
         }
 
         // Initialisation des munitions
-        currentAmmo = 0; // Pas de munitions au départ
         hasChamberedRound = false; // Pas de balle dans la chambre
     }
 
@@ -40,10 +38,7 @@ public class Pistol : Weapon
         //Debug.Log("Fire");
 
         //// Vérifie s'il y a une balle dans la chambre
-        //if (!hasChamberedRound) return;
-
-        //// Décharge la balle de la chambre
-        //hasChamberedRound = false;
+        if (!hasChamberedRound) return;
 
         //// Simule le recul et joue le son
         SimulateRecoil();
@@ -55,17 +50,10 @@ public class Pistol : Weapon
         //    SpawnBullet();
         //}
 
-        //if (shellPrefab != null && ejectionPort != null)
-        //{
-        //    EjectShell();
-        //}
-
-        //// Recharge une nouvelle balle si le chargeur n'est pas vide
-        //if (currentAmmo > 0 && currentMagazine != null)
-        //{
-        //    currentAmmo--; // Diminue les munitions du chargeur
-        //    hasChamberedRound = true; // Charge automatiquement une nouvelle balle
-        //}
+        if (shellPrefab != null && ejectionPort != null)
+        {
+            EjectShell();
+        }
     }
 
     private void SimulateRecoil()
@@ -124,23 +112,28 @@ public class Pistol : Weapon
         currentMagazine = null; // Libère la référence au chargeur
     }
 
-    private void SpawnBullet()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.AddForce(muzzle.forward * 500f); // Applique une force à la balle
-        }
-    }
+ 
 
-    private void EjectShell()
+    public void EjectShell()
     {
-        GameObject shell = Instantiate(shellPrefab, ejectionPort.position, ejectionPort.rotation);
-        Rigidbody rb = shell.GetComponent<Rigidbody>();
-        if (rb != null)
+        // Animation
+        if (hasChamberedRound)
         {
-            rb.AddForce(ejectionPort.right * 100f, ForceMode.Impulse); // Éjecte la douille
+            GameObject shell = Instantiate(shellPrefab, ejectionPort.position, ejectionPort.rotation);
+            Rigidbody rb = shell.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.AddForce(ejectionPort.right * 0.1f, ForceMode.Impulse); // Éjecte la douille
+            }
+        }
+
+        // Data
+        hasChamberedRound = false;
+
+        if (currentMagazine && currentMagazine.Ammo > 0)
+        {
+            hasChamberedRound = true;
+            currentMagazine.Ammo -= 1;
         }
     }
 

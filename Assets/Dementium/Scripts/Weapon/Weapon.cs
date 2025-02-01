@@ -2,12 +2,9 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    public int maxAmmo = 10;
-    public int currentAmmo = 0;
     public bool isAutomatic = false;
 
     public AudioClip fireSound;
-    public AudioClip reloadSound;
     public AudioSource audioSource;
 
     public bool hasChamberedRound = true;

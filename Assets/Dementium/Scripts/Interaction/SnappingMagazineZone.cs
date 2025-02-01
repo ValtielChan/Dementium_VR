@@ -11,10 +11,10 @@ public class SnappingMagazineZone : MonoBehaviour
     public Weapon weapon;
 
     // Méthode pour vérifier si un objet peut snapper
-    public bool CanSnap(GameObject obj)
+    public bool CanSnap()
     {
         //return ((1 << obj.layer) & snappingLayer) != 0;
-        return true;
+        return weapon.CurrentMagazine == null;
     }
 
     // Retourne les points de la glissière

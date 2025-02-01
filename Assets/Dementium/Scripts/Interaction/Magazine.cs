@@ -6,7 +6,7 @@ public class Magazine : Grabbable
 {
     public UnityEvent onSnap;
 
-    public Collider collider;
+    public new Collider collider;
 
     private SnappingMagazineZone currentSnappingZone; // Référence à la zone actuelle
     private Transform startPoint;            // Point de départ de la glissière (dépend de la zone)
@@ -14,12 +14,19 @@ public class Magazine : Grabbable
 
     private bool snapped;
 
+    private int ammo = 7;
+
+    public int Ammo { get => ammo; set => ammo = value; }
+
     protected new void Update()
     {
         base.Update();
 
         if (currentSnappingZone != null)
         {
+            // Applique les contraintes dynamiques si on est dans une zone de snapping
+            ApplySliderConstraint();
+
             // Vérifie si on doit sortir du mode snap
             if (grabbed)
             {
@@ -27,12 +34,15 @@ public class Magazine : Grabbable
                 Snap();
             }
 
-            // Applique les contraintes dynamiques si on est dans une zone de snapping
-            ApplySliderConstraint();
-
-            
+            if (!grabbed && Vector3.Distance(transform.position, startPoint.position) < 0.01f)
+            {
+                collider.isTrigger = false;
+                Emancipate();
+            }
         }
     }
+
+    
 
     protected override void UpdateRigidbody()
     {
@@ -40,16 +50,20 @@ public class Magazine : Grabbable
             rb.isKinematic = grabbed;
     }
 
+    
+
     private void Snap()
     {
         if (endPoint != null && !snapped)
         {
-            if (Vector3.Distance(transform.position, endPoint.position) < 0.055f)
+
+            if (Vector3.Distance(transform.position, endPoint.position) < 0.01f)
             {
-                Debug.Log("SNAP !");
+
+                Debug.Log($"SNAP at {Vector3.Distance(transform.position, endPoint.position)}!");
 
                 snapped = true;
-                grabbable = false; 
+                grabbable = false;
 
                 transform.position = endPoint.position;
                 transform.parent = currentSnappingZone.transform;
@@ -64,6 +78,13 @@ public class Magazine : Grabbable
 
             }
         }
+    }
+
+    private void Emancipate()
+    {
+        currentSnappingZone = null;
+        startPoint = null;
+        endPoint = null;
     }
 
     private void CheckExitSnap()
@@ -121,13 +142,13 @@ public class Magazine : Grabbable
         transform.rotation = endPoint.rotation;
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected new void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
 
         // Vérifie si l'objet entre dans une zone de snapping
         SnappingMagazineZone snappingZone = other.GetComponent<SnappingMagazineZone>();
-        if (snappingZone != null && snappingZone.CanSnap(gameObject))
+        if (snappingZone != null && snappingZone.CanSnap())
         {
             // Stocke la référence à la zone et configure les points
             currentSnappingZone = snappingZone;
@@ -136,17 +157,14 @@ public class Magazine : Grabbable
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    protected new void OnTriggerExit(Collider other)
     {
         base.OnTriggerExit(other);
 
         // Vérifie si l'objet sort de la zone de snapping
         if (currentSnappingZone != null && other.GetComponent<SnappingMagazineZone>() == currentSnappingZone)
         {
-            // Réinitialise la référence
-            currentSnappingZone = null;
-            startPoint = null;
-            endPoint = null;
+            Emancipate();
         }
     }
 }
