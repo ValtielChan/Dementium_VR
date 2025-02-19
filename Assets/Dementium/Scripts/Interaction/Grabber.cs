@@ -15,6 +15,9 @@ public class Grabber : MonoBehaviour
     [SerializeField]
     private Transform grabTransform;
 
+    [SerializeField]
+    private Renderer handRenderer;
+
     public Transform GrabTransform { 
         get {
             if (grabTransform == null)
@@ -39,7 +42,7 @@ public class Grabber : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        handRenderer.enabled = !grabbing;
     }
     
 }

@@ -1,4 +1,4 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
@@ -23,20 +23,21 @@ public class Grabbable : MonoBehaviour
     protected Rigidbody rb;
     protected Transform target;
 
-    protected Grabber currentGrabber; // RÈfÈrence explicite au Grabber actif
+    protected Grabber currentGrabber; // R√©f√©rence explicite au Grabber actif
 
     protected Vector3 previousLocalPosition;
     protected Vector3 previousLocalRotation;
 
+    // **** Nouvel ajout : le pivot personnalis√© ****
+    [Tooltip("Si d√©fini, ce pivot interne sera utilis√© pour le suivi lors du grab (la position/rotation de ce pivot sera align√©e sur celle de la cible).")]
+    public Transform customPivot;
+
     public bool Grabbed { get => grabbed; }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
-
- 
 
     protected void Update()
     {
@@ -54,8 +55,20 @@ public class Grabbable : MonoBehaviour
     {
         if (grabbed && target)
         {
-            transform.position = target.position;
-            transform.rotation = target.rotation;
+            // Si un pivot personnalis√© est d√©fini, on l'utilise pour calculer la transformation du grabbable
+            if (customPivot != null)
+            {
+                // On calcule la rotation de l'objet de mani√®re √† ce que customPivot (dont la rotation locale est fixe)
+                // se retrouve align√© avec la rotation de la cible.
+                transform.rotation = target.rotation * Quaternion.Inverse(customPivot.localRotation);
+                // On calcule la position de l'objet pour que customPivot se retrouve exactement √† target.position.
+                transform.position = target.position - transform.rotation * customPivot.localPosition;
+            }
+            else
+            {
+                transform.position = target.position;
+                transform.rotation = target.rotation;
+            }
         }
     }
 
@@ -82,7 +95,6 @@ public class Grabbable : MonoBehaviour
             {
                 onHoverExit?.Invoke();
                 grabber.grabAction.action.started -= OnGrabActionStarted;
-
                 currentGrabber = null; // Nettoyer le Grabber actif
             }
         }
@@ -98,12 +110,15 @@ public class Grabbable : MonoBehaviour
         grabber.triggerAction.action.started += OnActivateStarted;
         grabber.triggerAction.action.canceled += OnActivateCanceled;
 
-
         onGrabStart?.Invoke();
         grabbed = true;
         grabber.Grabbing = true;
 
         target = grabber.GrabTransform;
+
+        // Optionnel‚ÄØ: on peut initialiser ici previousLocalPosition si n√©cessaire.
+        previousLocalPosition = transform.localPosition;
+        previousLocalRotation = transform.localEulerAngles;
     }
 
     public virtual void Release(Grabber grabber)
@@ -123,10 +138,10 @@ public class Grabbable : MonoBehaviour
         currentGrabber = null; // Nettoyer le Grabber actif
     }
 
-    // MÈthodes de callback
+    // M√©thodes de callback
     protected void OnGrabActionStarted(InputAction.CallbackContext context)
     {
-        if (currentGrabber != null) // VÈrifie si un Grabber est actif
+        if (currentGrabber != null)
         {
             Grab(currentGrabber);
         }
@@ -134,7 +149,7 @@ public class Grabbable : MonoBehaviour
 
     protected void OnGrabActionCanceled(InputAction.CallbackContext context)
     {
-        if (currentGrabber != null) // VÈrifie si un Grabber est actif
+        if (currentGrabber != null)
         {
             Release(currentGrabber);
         }
@@ -142,7 +157,7 @@ public class Grabbable : MonoBehaviour
 
     protected void OnActivateStarted(InputAction.CallbackContext context)
     {
-        if (currentGrabber != null) // VÈrifie si un Grabber est actif
+        if (currentGrabber != null)
         {
             onActivateStart?.Invoke();
         }
@@ -150,7 +165,7 @@ public class Grabbable : MonoBehaviour
 
     protected void OnActivateCanceled(InputAction.CallbackContext context)
     {
-        if (currentGrabber != null) // VÈrifie si un Grabber est actif
+        if (currentGrabber != null)
         {
             onActivateStop?.Invoke();
         }
@@ -158,7 +173,7 @@ public class Grabbable : MonoBehaviour
 
     protected void OnPrimaryStarted(InputAction.CallbackContext context)
     {
-        if (currentGrabber != null) // VÈrifie si un Grabber est actif
+        if (currentGrabber != null)
         {
             onPrimary?.Invoke();
         }
@@ -166,7 +181,7 @@ public class Grabbable : MonoBehaviour
 
     protected void OnSecondaryStarted(InputAction.CallbackContext context)
     {
-        if (currentGrabber != null) // VÈrifie si un Grabber est actif
+        if (currentGrabber != null)
         {
             onSecondary?.Invoke();
         }

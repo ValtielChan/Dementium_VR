@@ -114,6 +114,8 @@ public class Pistol : Weapon
 
     public void EjectShell()
     {
+        Debug.Log("Eject shell");
+
         // Animation
         if (hasChamberedRound)
         {

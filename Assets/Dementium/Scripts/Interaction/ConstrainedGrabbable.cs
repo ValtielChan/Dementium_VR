@@ -127,6 +127,10 @@ public class ConstrainedGrabbable : Grabbable
         // Stocker la transformation initiale du Grabber
         grabberInitialPosition = grabber.transform.position;
         grabberInitialRotation = grabber.transform.rotation;
+
+        // **Solution** : Initialiser les positions/rotations précédentes avec la valeur actuelle
+        previousLocalPosition = transform.localPosition;
+        previousLocalRotation = transform.localEulerAngles;
     }
 
     public override void Release(Grabber grabber)

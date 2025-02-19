@@ -30,6 +30,7 @@ public class SnappingMagazineZone : MonoBehaviour
 
     public void LoadMagazine(Magazine mag)
     {
+        Debug.Log("Load Magazine");
         weapon.CurrentMagazine = mag;
     }
 }
