@@ -1,9 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.XR;
 
 public class Grabbable : MonoBehaviour
 {
+    public bool usePhysics;
+
+    [SerializeField]
+    private float throwForce = 2.0f;
+
+    [SerializeField]
+    private InventoryCallback inventoryCallback;
+
+    [SerializeField]
+    private HapticConfig hoverHaptics;
+
     // Events
     public UnityEvent onHoverEnter;
     public UnityEvent onHoverExit;
@@ -28,11 +40,21 @@ public class Grabbable : MonoBehaviour
     protected Vector3 previousLocalPosition;
     protected Vector3 previousLocalRotation;
 
+    protected Vector3 previousPosition;
+    protected Vector3 previousRotation;
+
+    protected bool storedMomentum;
+    protected Vector3 velocityMomentum;
+    protected Vector3 angularMomentum;
+
     // **** Nouvel ajout : le pivot personnalisé ****
     [Tooltip("Si défini, ce pivot interne sera utilisé pour le suivi lors du grab (la position/rotation de ce pivot sera alignée sur celle de la cible).")]
-    public Transform customPivot;
+    [SerializeField]
+    protected Transform customPivot;
 
     public bool Grabbed { get => grabbed; }
+
+    public Transform CustomPivot { get => customPivot; set => customPivot = value; }
 
     protected void Start()
     {
@@ -43,17 +65,55 @@ public class Grabbable : MonoBehaviour
     {
         UpdateRigidbody();
         UpdateTransform();
+
+        if ((transform.position - previousPosition).magnitude > 0)
+            velocityMomentum = transform.position - previousPosition;
+
+        if ((transform.eulerAngles - previousRotation).magnitude > 0)
+            angularMomentum = transform.eulerAngles - previousRotation;
+
+
+        previousPosition = transform.position;
+        previousRotation = transform.eulerAngles;
     }
 
     protected virtual void UpdateRigidbody()
     {
         if (rb)
-            rb.isKinematic = grabbed;
+        {
+            if (!usePhysics)
+            {
+                if (inventoryCallback)
+                {
+                    rb.isKinematic = grabbed || inventoryCallback.Stored;
+                }
+                else
+                {
+                    rb.isKinematic = grabbed;
+                }
+
+            }
+            else
+            {
+                rb.useGravity = !grabbed;
+                rb.constraints = grabbed ? RigidbodyConstraints.FreezeAll : RigidbodyConstraints.None;
+            }
+
+            if (storedMomentum && !rb.isKinematic)
+            {
+
+
+                rb.linearVelocity = velocityMomentum / Time.deltaTime * throwForce;
+                rb.angularVelocity = angularMomentum / Time.deltaTime;
+
+                storedMomentum = false;
+            }
+        }
     }
 
     protected virtual void UpdateTransform()
     {
-        if (grabbed && target)
+        if (grabbed && target && !usePhysics)
         {
             // Si un pivot personnalisé est défini, on l'utilise pour calculer la transformation du grabbable
             if (customPivot != null)
@@ -80,6 +140,7 @@ public class Grabbable : MonoBehaviour
             if (!grabbed && grabber && !grabber.Grabbing)
             {
                 currentGrabber = grabber; // Assigner le Grabber actif
+                SendHaptic(hoverHaptics);
                 onHoverEnter?.Invoke();
                 grabber.grabAction.action.started += OnGrabActionStarted;
             }
@@ -116,6 +177,22 @@ public class Grabbable : MonoBehaviour
 
         target = grabber.GrabTransform;
 
+        if (usePhysics) {
+            if (customPivot != null) {
+                transform.rotation = target.rotation * Quaternion.Inverse(customPivot.localRotation);
+                transform.position = target.position - transform.rotation * customPivot.localPosition;
+            }
+            else
+            {
+                transform.position = target.position;
+                transform.rotation = target.rotation;
+            }
+
+            transform.parent = target;
+        }
+
+        
+
         // Optionnel : on peut initialiser ici previousLocalPosition si nécessaire.
         previousLocalPosition = transform.localPosition;
         previousLocalRotation = transform.localEulerAngles;
@@ -136,6 +213,19 @@ public class Grabbable : MonoBehaviour
         grabber.Grabbing = false;
         target = null;
         currentGrabber = null; // Nettoyer le Grabber actif
+
+        if (usePhysics)
+            transform.parent = null;
+
+        storedMomentum = true;
+    }
+
+    public void SendHaptic(HapticConfig config)
+    {
+        if (currentGrabber)
+        {
+            currentGrabber.gameObject.SendMessage("StartHaptic", config);
+        }
     }
 
     // Méthodes de callback

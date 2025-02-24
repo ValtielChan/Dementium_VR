@@ -47,4 +47,10 @@ public class Health : MonoBehaviour
         health += heal;
         health = Mathf.Clamp(health, 0, maxHealth);
     }
+
+    [ContextMenu("Damage Test")]
+    public void DamageDebugTest()
+    {
+        Damage(0);
+    }
 }

@@ -1,65 +1,101 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Zombie : MonoBehaviour
 {
-    [SerializeField] private float speed = 2f;
-    [SerializeField] private float knockbackForce = 2f;
+    [SerializeField] private float detectionDistance;
+    [SerializeField] private float attackDistance;
+    [SerializeField] private float attackCooldown;
+
     [SerializeField] private Animator animator;
     [SerializeField] private NavMeshAgent navMeshAgent;
     [SerializeField] private Health health;
 
     private Transform player;
-    private bool isHit = false;
-    private Vector3 velocity;
+
+    private bool huntPlayer;
+    private bool isAttacking;
+
+    public bool IsAttacking { get => isAttacking; set => isAttacking = value; }
 
     void Start()
     {
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        health.onDie.AddListener(Die);
-        navMeshAgent.speed = speed;
+
+        HitStateBehaviour hitState = animator.GetBehaviour<HitStateBehaviour>();
+
+        if (hitState != null)
+        {
+            hitState.OnStateEnterAction += () => {
+                if (navMeshAgent != null)
+                {
+                    navMeshAgent.isStopped = true;
+                }
+            };
+
+            hitState.OnStateExitAction += () =>
+            {
+                if (navMeshAgent != null)
+                {
+                    navMeshAgent.isStopped = false;
+                }
+            };
+        }
+
     }
 
     void Update()
     {
-        if (isHit || health.Dead) return;
-        MoveTowardsPlayer();
+        if (Vector3.Distance(transform.position, player.position) < detectionDistance) {
+            
+            navMeshAgent.destination = player.position;
+            navMeshAgent.stoppingDistance = attackDistance;
+        }
+
+        if (Vector3.Distance(transform.position, player.position) < attackDistance + 0.5 && !IsAttacking)
+        {
+            StartCoroutine(Attack());
+        }
+
+        animator.SetBool("Walking", navMeshAgent.velocity.magnitude > 0.2f);
     }
 
-    private void MoveTowardsPlayer()
+    public IEnumerator Knockback(Vector3 direction, float distance, float speed)
     {
-        if (player == null) return;
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = startPosition + direction.normalized * distance;
 
-        navMeshAgent.SetDestination(player.position);
-        animator.SetBool("Walking", true);
+        float elapsedTime = 0f;
+        float duration = distance / speed;
+
+        while (elapsedTime < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPosition;
     }
 
-    public void TakeDamage(int damage, Vector3 hitDirection)
+    public void StopMovement()
     {
-        if (health.Dead) return;
-
-        health.Damage(damage);
-        animator.SetTrigger("Hit");
-        isHit = true;
-
-        navMeshAgent.isStopped = true;
-        velocity = hitDirection.normalized * knockbackForce;
-        transform.position += velocity * Time.deltaTime;
-
-        Invoke(nameof(ResetHitState), 0.5f);
+        if (navMeshAgent != null)
+        {
+            navMeshAgent.isStopped = true;
+        }
     }
 
-    private void ResetHitState()
+    private IEnumerator Attack()
     {
-        isHit = false;
-        navMeshAgent.isStopped = false;
-    }
+        IsAttacking = true;
 
-    private void Die()
-    {
-        animator.SetBool("Walking", false);
-        animator.SetTrigger("Die");
-        navMeshAgent.isStopped = true;
-        this.enabled = false;
+        animator.SetTrigger("Attack");
+
+        yield return new WaitForSeconds(attackCooldown);
+
+        IsAttacking = false;
     }
 }
