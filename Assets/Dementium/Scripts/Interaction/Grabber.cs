@@ -2,6 +2,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 
+public enum Handedness
+{
+    Left,
+    Right
+}
+
 public class Grabber : MonoBehaviour
 {
 
@@ -16,10 +22,19 @@ public class Grabber : MonoBehaviour
     private Transform grabTransform;
 
     [SerializeField]
-    private Renderer handRenderer;
+    private GameObject hand;
 
-    public Transform GrabTransform { 
-        get {
+    [SerializeField]
+    private Handedness handedness;
+
+    private Vector3 originalHandPosition;
+    private Quaternion originalHandRotation;
+    private Transform originalParent;
+
+    public Transform GrabTransform
+    {
+        get
+        {
             if (grabTransform == null)
             {
                 return transform;
@@ -28,21 +43,36 @@ public class Grabber : MonoBehaviour
             {
                 return grabTransform;
             }
-        } 
+        }
     }
 
     public bool Grabbing { get => grabbing; set => grabbing = value; }
+    public GameObject Hand { get => hand; set => hand = value; }
+    public Handedness Handedness { get => handedness; set => handedness = value; }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        originalHandPosition = hand.transform.localPosition;
+        originalHandRotation = hand.transform.localRotation;
+        originalParent = hand.transform.parent;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ReleaseHand()
     {
-        handRenderer.enabled = !grabbing;
+
+        if (hand != null)
+        {
+
+            Animator handAnimator = hand.GetComponent<Animator>();
+            if (handAnimator != null)
+            {
+                handAnimator.SetTrigger("Release");
+            }
+
+            hand.transform.parent = originalParent;
+            hand.transform.localPosition = originalHandPosition;
+            hand.transform.localRotation = originalHandRotation;
+        }
     }
-    
+
 }

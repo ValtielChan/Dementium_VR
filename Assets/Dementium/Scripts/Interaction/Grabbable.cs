@@ -16,6 +16,9 @@ public class Grabbable : MonoBehaviour
     [SerializeField]
     private HapticConfig hoverHaptics;
 
+    [SerializeField]
+    private HandPositioning handPositioning;
+
     // Events
     public UnityEvent onHoverEnter;
     public UnityEvent onHoverExit;
@@ -52,9 +55,14 @@ public class Grabbable : MonoBehaviour
     [SerializeField]
     protected Transform customPivot;
 
+
     public bool Grabbed { get => grabbed; }
 
     public Transform CustomPivot { get => customPivot; set => customPivot = value; }
+
+    public bool StoredUsePhysics { 
+        get => inventoryCallback && inventoryCallback.Stored ? false : usePhysics; 
+    }
 
     protected void Start()
     {
@@ -81,8 +89,6 @@ public class Grabbable : MonoBehaviour
     {
         if (rb)
         {
-            if (!usePhysics)
-            {
                 if (inventoryCallback)
                 {
                     rb.isKinematic = grabbed || inventoryCallback.Stored;
@@ -92,11 +98,16 @@ public class Grabbable : MonoBehaviour
                     rb.isKinematic = grabbed;
                 }
 
-            }
-            else
+            
+            if (usePhysics && grabbed)
             {
-                rb.useGravity = !grabbed;
-                rb.constraints = grabbed ? RigidbodyConstraints.FreezeAll : RigidbodyConstraints.None;
+                rb.useGravity = false;
+                rb.constraints = RigidbodyConstraints.FreezeAll;
+            }
+            else if (usePhysics && !grabbed)
+            {
+                rb.useGravity = true;
+                rb.constraints = RigidbodyConstraints.None;
             }
 
             if (storedMomentum && !rb.isKinematic)
@@ -177,6 +188,10 @@ public class Grabbable : MonoBehaviour
 
         target = grabber.GrabTransform;
 
+        if (handPositioning) {
+            handPositioning.PositionHand(grabber.Hand.transform, grabber.Handedness);
+        }
+
         if (usePhysics) {
             if (customPivot != null) {
                 transform.rotation = target.rotation * Quaternion.Inverse(customPivot.localRotation);
@@ -189,6 +204,7 @@ public class Grabbable : MonoBehaviour
             }
 
             transform.parent = target;
+            Debug.Log("Grab Parent");
         }
 
         
@@ -214,6 +230,8 @@ public class Grabbable : MonoBehaviour
         target = null;
         currentGrabber = null; // Nettoyer le Grabber actif
 
+        grabber.ReleaseHand();
+        
         if (usePhysics)
             transform.parent = null;
 

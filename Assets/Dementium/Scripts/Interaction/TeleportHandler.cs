@@ -7,12 +7,22 @@ public class TeleportHandler : MonoBehaviour
 {
     [SerializeField] private Transform teleportPointA;
     [SerializeField] private Transform teleportPointB;
-    [SerializeField] private Fade fadeEffect;
+    private Fade fadeEffect;
 
     [SerializeField] private HapticConfig hoverHapticConfig;
 
+    [SerializeField] private GameObject roomA;
+    [SerializeField] private GameObject roomB;
+
+    [SerializeField] private GameObject colliderA;
+    [SerializeField] private GameObject colliderB;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource teleportAudioSource;
+    [SerializeField] private AudioClip teleportSound;
+
     private bool isAtPointA = true;
-    private Grabber currentGrabber; // RÈfÈrence au Grabber actif
+    private Grabber currentGrabber; // R√©f√©rence au Grabber actif
 
     private GameObject player;
 
@@ -23,9 +33,11 @@ public class TeleportHandler : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
 
-        if (!teleportPointA || !teleportPointB || !fadeEffect)
+        fadeEffect = FindAnyObjectByType<Fade>();
+
+        if (!teleportPointA || !teleportPointB || !fadeEffect || !roomA || !roomB)
         {
-            Debug.LogError("TeleportHandler mal configurÈ. VÈrifie les rÈfÈrences.");
+            Debug.LogError("TeleportHandler mal configur√©. V√©rifie les r√©f√©rences.");
             enabled = false;
             return;
         }
@@ -36,15 +48,15 @@ public class TeleportHandler : MonoBehaviour
     {
         Debug.Log("Teleport zone trigger enter");
 
-        if (currentGrabber != null) return; // Un Grabber est dÈj‡ actif, on ignore
+        if (currentGrabber != null) return; // Un Grabber est d√©j√† actif, on ignore
 
 
         Grabber grabber = other.GetComponent<Grabber>();
-        if (grabber && !grabber.Grabbing) // VÈrifie qu'il n'est pas dÈj‡ en train de grab
+        if (grabber && !grabber.Grabbing) // V√©rifie qu'il n'est pas d√©j√† en train de grab
         {
             currentGrabber = grabber;
             currentGrabber.gameObject.SendMessage("StartHaptic", hoverHapticConfig);
-            grabber.triggerAction.action.started += TriggerTeleport; // On Ècoute l'ÈvÈnement d'activation
+            grabber.triggerAction.action.started += TriggerTeleport; // On √©coute l'√©v√©nement d'activation
 
         }
     }
@@ -63,23 +75,48 @@ public class TeleportHandler : MonoBehaviour
     {
         if (currentGrabber == null) return;
 
-     
+        currentGrabber.triggerAction.action.started -= TriggerTeleport;
+        currentGrabber = null;
 
         onTeleportStart?.Invoke();
         fadeEffect.StartFadeOut(0.5f);
 
-        // DÈlais pour la transition
+        // Jouer le son de t√©l√©portation
+        if (teleportAudioSource != null && teleportSound != null)
+        {
+            teleportAudioSource.PlayOneShot(teleportSound);
+        }
+
+        // D√©lais pour la transition
         Invoke(nameof(TeleportPlayer), 0.5f);
     }
 
     private void TeleportPlayer()
     {
+        if (isAtPointA){
+            roomB.SetActive(true);
+            colliderB.SetActive(true);
+        }
+        else{
+            roomA.SetActive(true);
+            colliderA.SetActive(true);
+        }
 
         player.transform.position = isAtPointA ? teleportPointB.position : teleportPointA.position;
 
         isAtPointA = !isAtPointA;
         fadeEffect.StartFadeIn(0.5f);
         onTeleportComplete?.Invoke();
+
+        if (!isAtPointA){
+            roomA.SetActive(false);
+            colliderA.SetActive(false);
+        }
+        else{
+            roomB.SetActive(false);
+            colliderB.SetActive(false);
+        }
+        
     }
 
     private void ActivateCollider(Collider col, bool state)
