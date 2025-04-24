@@ -7,19 +7,32 @@ public class HandPositioning : MonoBehaviour
     [SerializeField] private Transform rightHandTransform;
     [SerializeField] private Transform leftHandTransform;
 
+    [Header("Secondary Hand Transform References")]
+    [SerializeField] private Transform secondaryRightHandTransform;
+    [SerializeField] private Transform secondaryLeftHandTransform;
+
     [Header("Animation Parameters")]
     [SerializeField] private string grabAnimationTrigger = "Grab";
+    [SerializeField] private string secondaryGrabAnimationTrigger = "SecondaryGrab";
 
     // Store original hand transforms to restore when released
     
 
 
 
-    public void PositionHand(Transform handModel, Handedness handedness)
+    public void PositionHand(Transform handModel, Handedness handedness, bool isSecondaryGrab = false)
     {
-        Transform targetTransform = rightHandTransform;
-        if (handedness == Handedness.Left) {
-            targetTransform = leftHandTransform;
+        Transform targetTransform;
+        
+        if (isSecondaryGrab)
+        {
+            // Utiliser les positions secondaires
+            targetTransform = handedness == Handedness.Right ? secondaryRightHandTransform : secondaryLeftHandTransform;
+        }
+        else
+        {
+            // Utiliser les positions principales
+            targetTransform = handedness == Handedness.Right ? rightHandTransform : leftHandTransform;
         }
 
         if (handModel == null || targetTransform == null) return;
@@ -27,7 +40,7 @@ public class HandPositioning : MonoBehaviour
         Animator handAnimator = handModel.GetComponent<Animator>();
         if (handAnimator != null)
         {
-            handAnimator.SetTrigger(grabAnimationTrigger);
+            handAnimator.SetTrigger(isSecondaryGrab ? secondaryGrabAnimationTrigger : grabAnimationTrigger);
         }
 
         handModel.SetParent(targetTransform);

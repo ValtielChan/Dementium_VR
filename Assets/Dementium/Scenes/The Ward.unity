@@ -1299,6 +1299,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2155795488750398529, guid: 4ad88c80eb41612449be41a76d0ea30a, type: 3}
   m_PrefabInstance: {fileID: 857683282}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &857893139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 857893140}
+  m_Layer: 0
+  m_Name: Secondary Right Hand Transform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &857893140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857893139}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.11907145, y: -0.016357714, z: -0.9835137, w: -0.13511185}
+  m_LocalPosition: {x: 0, y: -0.054700002, z: -0.11389998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 171057812}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &859300307
 GameObject:
   m_ObjectHideFlags: 0
@@ -2878,6 +2909,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 171057812}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1631861042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1631861043}
+  m_Layer: 0
+  m_Name: Secondary Left Hand Transform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1631861043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631861042}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.11060374, y: -0.04703402, z: -0.98450124, w: 0.1277179}
+  m_LocalPosition: {x: 0, y: -0.054700002, z: -0.11389998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 171057812}
+  m_LocalEulerAnglesHint: {x: -3.69, y: -13.313, z: -164.786}
 --- !u!1 &1740165811
 GameObject:
   m_ObjectHideFlags: 0
@@ -3365,6 +3427,12 @@ MonoBehaviour:
   onSecondary:
     m_PersistentCalls:
       m_Calls: []
+  onSecondaryGrabStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onSecondaryGrabStop:
+    m_PersistentCalls:
+      m_Calls: []
   customPivot: {fileID: 636445868}
 --- !u!54 &1837272291
 Rigidbody:
@@ -3431,7 +3499,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightHandTransform: {fileID: 1214571464}
   leftHandTransform: {fileID: 2073012354}
+  secondaryRightHandTransform: {fileID: 0}
+  secondaryLeftHandTransform: {fileID: 0}
   grabAnimationTrigger: Handle_Torch
+  secondaryGrabAnimationTrigger: SecondaryGrab
 --- !u!1001 &1854169545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3978,7 +4049,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightHandTransform: {fileID: 1757622851}
   leftHandTransform: {fileID: 1049627299}
+  secondaryRightHandTransform: {fileID: 0}
+  secondaryLeftHandTransform: {fileID: 0}
   grabAnimationTrigger: Handle_Culasse
+  secondaryGrabAnimationTrigger: SecondaryGrab
 --- !u!1 &2073012353
 GameObject:
   m_ObjectHideFlags: 0
@@ -4203,7 +4277,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightHandTransform: {fileID: 750648326}
   leftHandTransform: {fileID: 1002377938}
+  secondaryRightHandTransform: {fileID: 0}
+  secondaryLeftHandTransform: {fileID: 0}
   grabAnimationTrigger: Handle_Tonfa
+  secondaryGrabAnimationTrigger: SecondaryGrab
 --- !u!1001 &2136026705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7298,6 +7375,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3857987184778850796, guid: 509b89cd7cedd3e49a76f21f7056e062, type: 3}
+      propertyPath: m_Size.x
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857987184778850796, guid: 509b89cd7cedd3e49a76f21f7056e062, type: 3}
+      propertyPath: m_Size.y
+      value: 0.06694384
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857987184778850796, guid: 509b89cd7cedd3e49a76f21f7056e062, type: 3}
+      propertyPath: m_Size.z
+      value: 0.21030389
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857987184778850796, guid: 509b89cd7cedd3e49a76f21f7056e062, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0000000050810938
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857987184778850796, guid: 509b89cd7cedd3e49a76f21f7056e062, type: 3}
+      propertyPath: m_Center.y
+      value: 0.008756557
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857987184778850796, guid: 509b89cd7cedd3e49a76f21f7056e062, type: 3}
+      propertyPath: m_Center.z
+      value: -0.014991817
+      objectReference: {fileID: 0}
     - target: {fileID: 4149655379825690890, guid: 509b89cd7cedd3e49a76f21f7056e062, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7351,6 +7452,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4149655379825690890, guid: 509b89cd7cedd3e49a76f21f7056e062, type: 3}
       insertIndex: -1
       addedObject: {fileID: 580117870}
+    - targetCorrespondingSourceObject: {fileID: 4149655379825690890, guid: 509b89cd7cedd3e49a76f21f7056e062, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 857893140}
+    - targetCorrespondingSourceObject: {fileID: 4149655379825690890, guid: 509b89cd7cedd3e49a76f21f7056e062, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1631861043}
     - targetCorrespondingSourceObject: {fileID: 2087894927732230597, guid: 509b89cd7cedd3e49a76f21f7056e062, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1757622851}
@@ -7390,7 +7497,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightHandTransform: {fileID: 1602481922}
   leftHandTransform: {fileID: 580117870}
+  secondaryRightHandTransform: {fileID: 857893140}
+  secondaryLeftHandTransform: {fileID: 1631861043}
   grabAnimationTrigger: Handle_Gun
+  secondaryGrabAnimationTrigger: Handle_Gun_Secondary
 --- !u!1001 &8015818855411790575
 PrefabInstance:
   m_ObjectHideFlags: 0

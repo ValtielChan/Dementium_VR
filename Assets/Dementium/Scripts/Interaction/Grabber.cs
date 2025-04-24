@@ -16,6 +16,8 @@ public class Grabber : MonoBehaviour
     public InputActionReference primaryAction;
     public InputActionReference secondaryAction;
 
+    private bool busy;
+
     private bool grabbing;
 
     [SerializeField]
@@ -47,6 +49,7 @@ public class Grabber : MonoBehaviour
     }
 
     public bool Grabbing { get => grabbing; set => grabbing = value; }
+    public bool Busy { get => busy; set => busy = value; }
     public GameObject Hand { get => hand; set => hand = value; }
     public Handedness Handedness { get => handedness; set => handedness = value; }
 

@@ -32,13 +32,19 @@ public class Grabbable : MonoBehaviour
     public UnityEvent onPrimary;
     public UnityEvent onSecondary;
 
+    // Secondary Grab Events
+    public UnityEvent onSecondaryGrabStart;
+    public UnityEvent onSecondaryGrabStop;
+
     protected bool grabbable = true;
     protected bool grabbed;
+    protected bool secondaryGrabbed;
 
     protected Rigidbody rb;
     protected Transform target;
 
     protected Grabber currentGrabber; // Référence explicite au Grabber actif
+    protected Grabber secondaryGrabber; // Référence au grabber secondaire
 
     protected Vector3 previousLocalPosition;
     protected Vector3 previousLocalRotation;
@@ -57,6 +63,7 @@ public class Grabbable : MonoBehaviour
 
 
     public bool Grabbed { get => grabbed; }
+    public bool SecondaryGrabbed { get => secondaryGrabbed; }
 
     public Transform CustomPivot { get => customPivot; set => customPivot = value; }
 
@@ -148,12 +155,26 @@ public class Grabbable : MonoBehaviour
         if (grabbable)
         {
             Grabber grabber = other.GetComponent<Grabber>();
-            if (!grabbed && grabber && !grabber.Grabbing)
+            if (grabber && !grabber.Grabbing && !grabber.Busy)
             {
-                currentGrabber = grabber; // Assigner le Grabber actif
-                SendHaptic(hoverHaptics);
-                onHoverEnter?.Invoke();
-                grabber.grabAction.action.started += OnGrabActionStarted;
+                if (!grabbed)
+                {
+                    // Premier grab potentiel
+                    currentGrabber = grabber; // Assigner le Grabber actif
+                    SendHaptic(hoverHaptics);
+                    onHoverEnter?.Invoke();
+                    grabber.grabAction.action.started += OnGrabActionStarted;
+                    grabber.Busy = true;
+                }
+                else if (grabbed && !secondaryGrabbed && grabber != currentGrabber)
+                {
+                    // Si déjà grabbé par une main, mais pas encore par une seconde
+                    secondaryGrabber = grabber;
+                    SendHaptic(hoverHaptics);
+                    onHoverEnter?.Invoke();
+                    grabber.grabAction.action.started += OnSecondaryGrabActionStarted;
+                    grabber.Busy = true;
+                }
             }
         }
     }
@@ -163,11 +184,22 @@ public class Grabbable : MonoBehaviour
         if (grabbable)
         {
             Grabber grabber = other.GetComponent<Grabber>();
-            if (!grabbed && grabber && grabber == currentGrabber)
+            if (grabber)
             {
-                onHoverExit?.Invoke();
-                grabber.grabAction.action.started -= OnGrabActionStarted;
-                currentGrabber = null; // Nettoyer le Grabber actif
+                if (!grabbed && grabber == currentGrabber)
+                {
+                    onHoverExit?.Invoke();
+                    grabber.grabAction.action.started -= OnGrabActionStarted;
+                    grabber.Busy = false;
+                    currentGrabber = null; // Nettoyer le Grabber actif
+                }
+                else if (grabbed && !secondaryGrabbed && grabber == secondaryGrabber)
+                {
+                    onHoverExit?.Invoke();
+                    grabber.grabAction.action.started -= OnSecondaryGrabActionStarted;
+                    grabber.Busy = false;
+                    secondaryGrabber = null;
+                }
             }
         }
     }
@@ -209,9 +241,24 @@ public class Grabbable : MonoBehaviour
 
         
 
-        // Optionnel : on peut initialiser ici previousLocalPosition si nécessaire.
+        // Optionnel : on peut initialiser ici previousLocalPosition si nécessaire.
         previousLocalPosition = transform.localPosition;
         previousLocalRotation = transform.localEulerAngles;
+    }
+
+    public virtual void SecondaryGrab(Grabber grabber)
+    {
+        secondaryGrabber = grabber;
+
+        grabber.grabAction.action.canceled += OnSecondaryGrabActionCanceled;
+        
+        onSecondaryGrabStart?.Invoke();
+        secondaryGrabbed = true;
+        grabber.Grabbing = true;
+
+        if (handPositioning) {
+            handPositioning.PositionHand(grabber.Hand.transform, grabber.Handedness, true);
+        }
     }
 
     public virtual void Release(Grabber grabber)
@@ -227,6 +274,7 @@ public class Grabbable : MonoBehaviour
         onGrabStop?.Invoke();
         grabbed = false;
         grabber.Grabbing = false;
+        grabber.Busy = false;
         target = null;
         currentGrabber = null; // Nettoyer le Grabber actif
 
@@ -238,11 +286,31 @@ public class Grabbable : MonoBehaviour
         storedMomentum = true;
     }
 
+    public virtual void SecondaryRelease(Grabber grabber)
+    {
+        Debug.Log("Secondary Release");
+
+        grabber.grabAction.action.canceled -= OnSecondaryGrabActionCanceled;
+
+        onSecondaryGrabStop?.Invoke();
+        secondaryGrabbed = false;
+        grabber.Grabbing = false;
+        grabber.Busy = false;
+        secondaryGrabber = null;
+
+        grabber.ReleaseHand();
+    }
+
     public void SendHaptic(HapticConfig config)
     {
         if (currentGrabber)
         {
             currentGrabber.gameObject.SendMessage("StartHaptic", config);
+        }
+        
+        if (secondaryGrabber)
+        {
+            secondaryGrabber.gameObject.SendMessage("StartHaptic", config);
         }
     }
 
@@ -255,11 +323,41 @@ public class Grabbable : MonoBehaviour
         }
     }
 
+    protected void OnSecondaryGrabActionStarted(InputAction.CallbackContext context)
+    {
+        if (secondaryGrabber != null)
+        {
+            SecondaryGrab(secondaryGrabber);
+        }
+    }
+
     protected void OnGrabActionCanceled(InputAction.CallbackContext context)
     {
         if (currentGrabber != null)
         {
             Release(currentGrabber);
+            
+            // Si on a un grab secondaire actif, le transformer en grab primaire
+            if (secondaryGrabbed && secondaryGrabber != null)
+            {
+                Grabber tempGrabber = secondaryGrabber;
+                
+                // Libérer le grab secondaire
+                SecondaryRelease(secondaryGrabber);
+                
+                // Le transformer en grab primaire
+                Grab(tempGrabber);
+            }
+        }
+    }
+
+    protected void OnSecondaryGrabActionCanceled(InputAction.CallbackContext context)
+    {
+        Debug.Log("Secondary Grab Canceled");
+
+        if (secondaryGrabber != null)
+        {
+            SecondaryRelease(secondaryGrabber);
         }
     }
 
