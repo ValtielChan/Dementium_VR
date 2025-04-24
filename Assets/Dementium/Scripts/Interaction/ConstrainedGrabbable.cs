@@ -46,8 +46,8 @@ public class ConstrainedGrabbable : Grabbable
     private Vector3 initialLocalPosition;
     private Vector3 initialLocalRotation;
 
-    private Vector3 grabberInitialPosition; // RÈfÈrence initiale de position du Grabber
-    private Quaternion grabberInitialRotation; // RÈfÈrence initiale de rotation du Grabber
+    private Vector3 grabberInitialPosition; // R√©f√©rence initiale de position du Grabber
+    private Quaternion grabberInitialRotation; // R√©f√©rence initiale de rotation du Grabber
 
     new void Start()
     {
@@ -57,14 +57,71 @@ public class ConstrainedGrabbable : Grabbable
         initialLocalRotation = transform.localEulerAngles; // Stockage de la rotation initiale
     }
 
+    new protected void OnTriggerEnter(Collider other)
+    {
+        if (grabbable)
+        {
+            Grabber grabber = other.GetComponent<Grabber>();
+            if (grabber && !grabber.Grabbing) // On ignore grabber.Busy
+            {
+                if (!grabbed)
+                {
+                    // Premier grab potentiel
+                    currentGrabber = grabber;
+                    SendHaptic(hoverHaptics);
+                    onHoverEnter?.Invoke();
+                    
+                    // S'abonner √† l'action choisie (HandTrigger ou IndexTrigger)
+                    if (grabTriggerType == GrabTriggerType.HandTrigger)
+                    {
+                        grabber.grabAction.action.started += OnGrabActionStarted;
+                    }
+                    else // IndexTrigger
+                    {
+                        grabber.triggerAction.action.started += OnGrabActionStarted;
+                    }
+                    
+                    grabber.Busy = true;
+                }
+                // Pas de logique de secondary grabber ici
+            }
+        }
+    }
+
+    new protected void OnTriggerExit(Collider other)
+    {
+        if (grabbable)
+        {
+            Grabber grabber = other.GetComponent<Grabber>();
+            if (grabber)
+            {
+                if (!grabbed && grabber == currentGrabber)
+                {
+                    onHoverExit?.Invoke();
+                    
+                    // Se d√©sabonner de l'action choisie
+                    if (grabTriggerType == GrabTriggerType.HandTrigger)
+                    {
+                        grabber.grabAction.action.started -= OnGrabActionStarted;
+                    }
+                    else // IndexTrigger
+                    {
+                        grabber.triggerAction.action.started -= OnGrabActionStarted;
+                    }
+                    
+                    grabber.Busy = false;
+                    currentGrabber = null;
+                }
+                // Pas de logique de secondary grabber ici
+            }
+        }
+    }
+
     new void Update()
     {
-
-
-
         if (grabbed && target != null)
         {
-            // Calcul des translations locales par rapport ‡ la position initiale du Grabber
+            // Calcul des translations locales par rapport √† la position initiale du Grabber
             Vector3 grabberDeltaPosition = target.position - grabberInitialPosition;
             Vector3 targetLocalPosition = transform.parent.InverseTransformPoint(transform.parent.position + grabberDeltaPosition);
             Vector3 constrainedLocalPosition = transform.localPosition;
@@ -87,7 +144,7 @@ public class ConstrainedGrabbable : Grabbable
                 TriggerTranslationEvent(constrainedLocalPosition.z, previousLocalPosition.z, dofConstraint.minLocalTranslationZ, dofConstraint.maxLocalTranslationZ);
             }
 
-            // Calcul des rotations locales par rapport ‡ la rotation initiale du Grabber
+            // Calcul des rotations locales par rapport √† la rotation initiale du Grabber
             Quaternion grabberDeltaRotation = target.rotation * Quaternion.Inverse(grabberInitialRotation);
             Vector3 targetLocalEulerAngles = (grabberDeltaRotation * Quaternion.Euler(initialLocalRotation)).eulerAngles;
             Vector3 constrainedLocalRotation = transform.localEulerAngles;
@@ -114,7 +171,7 @@ public class ConstrainedGrabbable : Grabbable
             transform.localPosition = constrainedLocalPosition;
             transform.localEulerAngles = constrainedLocalRotation;
 
-            // Sauvegarder les positions/rotations pour les ÈvÈnements
+            // Sauvegarder les positions/rotations pour les √©v√©nements
             previousLocalPosition = constrainedLocalPosition;
             previousLocalRotation = constrainedLocalRotation;
         }
@@ -128,7 +185,7 @@ public class ConstrainedGrabbable : Grabbable
         grabberInitialPosition = grabber.transform.position;
         grabberInitialRotation = grabber.transform.rotation;
 
-        // **Solution** : Initialiser les positions/rotations prÈcÈdentes avec la valeur actuelle
+        // **Solution** : Initialiser les positions/rotations pr√©c√©dentes avec la valeur actuelle
         previousLocalPosition = transform.localPosition;
         previousLocalRotation = transform.localEulerAngles;
     }
@@ -149,7 +206,7 @@ public class ConstrainedGrabbable : Grabbable
         Vector3 startPosition = transform.localPosition;
         Vector3 startRotation = transform.localEulerAngles;
 
-        while (elapsedTime < 1f) // DurÈe rÈglable
+        while (elapsedTime < 1f) // Dur√©e r√©glable
         {
             elapsedTime += Time.deltaTime * dofConstraint.springStrength;
 
@@ -162,7 +219,7 @@ public class ConstrainedGrabbable : Grabbable
 
         dofConstraint.onMaxTranslationLimitReached?.Invoke();
 
-        // Position finale pour Èviter les imprÈcisions
+        // Position finale pour √©viter les impr√©cisions
         transform.localPosition = initialLocalPosition;
         transform.localEulerAngles = initialLocalRotation;
     }

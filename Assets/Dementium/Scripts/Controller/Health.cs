@@ -38,14 +38,20 @@ public class Health : MonoBehaviour
     {
         Debug.Log($"Damage ! {damage}");
 
-        health -= damage;
-        onDamage?.Invoke();
+        if (!dead)
+        {
+            health -= damage;
+            onDamage?.Invoke();
+        }
     }
 
     public void Heal(int heal)
     {
-        health += heal;
-        health = Mathf.Clamp(health, 0, maxHealth);
+        if (!dead)
+        {
+            health += heal;
+            health = Mathf.Clamp(health, 0, maxHealth);
+        }
     }
 
     [ContextMenu("Damage Test")]

@@ -3,21 +3,30 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
 
+public enum GrabTriggerType
+{
+    HandTrigger,
+    IndexTrigger
+}
+
 public class Grabbable : MonoBehaviour
 {
     public bool usePhysics;
 
     [SerializeField]
-    private float throwForce = 2.0f;
+    protected float throwForce = 2.0f;
 
     [SerializeField]
-    private InventoryCallback inventoryCallback;
+    protected InventoryCallback inventoryCallback;
 
     [SerializeField]
-    private HapticConfig hoverHaptics;
+    protected HapticConfig hoverHaptics;
 
     [SerializeField]
-    private HandPositioning handPositioning;
+    protected HandPositioning handPositioning;
+
+    [SerializeField]
+    protected GrabTriggerType grabTriggerType = GrabTriggerType.HandTrigger;
 
     // Events
     public UnityEvent onHoverEnter;
@@ -163,7 +172,17 @@ public class Grabbable : MonoBehaviour
                     currentGrabber = grabber; // Assigner le Grabber actif
                     SendHaptic(hoverHaptics);
                     onHoverEnter?.Invoke();
-                    grabber.grabAction.action.started += OnGrabActionStarted;
+                    
+                    // S'abonner à l'action choisie (HandTrigger ou IndexTrigger)
+                    if (grabTriggerType == GrabTriggerType.HandTrigger)
+                    {
+                        grabber.grabAction.action.started += OnGrabActionStarted;
+                    }
+                    else // IndexTrigger
+                    {
+                        grabber.triggerAction.action.started += OnGrabActionStarted;
+                    }
+                    
                     grabber.Busy = true;
                 }
                 else if (grabbed && !secondaryGrabbed && grabber != currentGrabber)
@@ -172,7 +191,17 @@ public class Grabbable : MonoBehaviour
                     secondaryGrabber = grabber;
                     SendHaptic(hoverHaptics);
                     onHoverEnter?.Invoke();
-                    grabber.grabAction.action.started += OnSecondaryGrabActionStarted;
+                    
+                    // S'abonner à l'action choisie pour le grab secondaire aussi
+                    if (grabTriggerType == GrabTriggerType.HandTrigger)
+                    {
+                        grabber.grabAction.action.started += OnSecondaryGrabActionStarted;
+                    }
+                    else // IndexTrigger
+                    {
+                        grabber.triggerAction.action.started += OnSecondaryGrabActionStarted;
+                    }
+                    
                     grabber.Busy = true;
                 }
             }
@@ -189,14 +218,34 @@ public class Grabbable : MonoBehaviour
                 if (!grabbed && grabber == currentGrabber)
                 {
                     onHoverExit?.Invoke();
-                    grabber.grabAction.action.started -= OnGrabActionStarted;
+                    
+                    // Se désabonner de l'action choisie
+                    if (grabTriggerType == GrabTriggerType.HandTrigger)
+                    {
+                        grabber.grabAction.action.started -= OnGrabActionStarted;
+                    }
+                    else // IndexTrigger
+                    {
+                        grabber.triggerAction.action.started -= OnGrabActionStarted;
+                    }
+                    
                     grabber.Busy = false;
                     currentGrabber = null; // Nettoyer le Grabber actif
                 }
                 else if (grabbed && !secondaryGrabbed && grabber == secondaryGrabber)
                 {
                     onHoverExit?.Invoke();
-                    grabber.grabAction.action.started -= OnSecondaryGrabActionStarted;
+                    
+                    // Se désabonner de l'action choisie
+                    if (grabTriggerType == GrabTriggerType.HandTrigger)
+                    {
+                        grabber.grabAction.action.started -= OnSecondaryGrabActionStarted;
+                    }
+                    else // IndexTrigger
+                    {
+                        grabber.triggerAction.action.started -= OnSecondaryGrabActionStarted;
+                    }
+                    
                     grabber.Busy = false;
                     secondaryGrabber = null;
                 }
@@ -208,11 +257,22 @@ public class Grabbable : MonoBehaviour
     {
         currentGrabber = grabber;
 
-        grabber.grabAction.action.canceled += OnGrabActionCanceled;
+        // S'abonner à l'action cancel correspondante au type de grab
+        if (grabTriggerType == GrabTriggerType.HandTrigger)
+        {
+            grabber.grabAction.action.canceled += OnGrabActionCanceled;
+            // On peut s'abonner au trigger car il n'est pas utilisé pour grabber
+            grabber.triggerAction.action.started += OnActivateStarted;
+            grabber.triggerAction.action.canceled += OnActivateCanceled;
+        }
+        else // IndexTrigger
+        {
+            grabber.triggerAction.action.canceled += OnGrabActionCanceled;
+            // On ne s'abonne pas au trigger car c'est lui qui est utilisé pour grabber
+        }
+
         grabber.primaryAction.action.started += OnPrimaryStarted;
         grabber.secondaryAction.action.started += OnSecondaryStarted;
-        grabber.triggerAction.action.started += OnActivateStarted;
-        grabber.triggerAction.action.canceled += OnActivateCanceled;
 
         onGrabStart?.Invoke();
         grabbed = true;
@@ -250,7 +310,15 @@ public class Grabbable : MonoBehaviour
     {
         secondaryGrabber = grabber;
 
-        grabber.grabAction.action.canceled += OnSecondaryGrabActionCanceled;
+        // S'abonner à l'action canceled selon le type de grab
+        if (grabTriggerType == GrabTriggerType.HandTrigger)
+        {
+            grabber.grabAction.action.canceled += OnSecondaryGrabActionCanceled;
+        }
+        else // IndexTrigger
+        {
+            grabber.triggerAction.action.canceled += OnSecondaryGrabActionCanceled;
+        }
         
         onSecondaryGrabStart?.Invoke();
         secondaryGrabbed = true;
@@ -265,12 +333,21 @@ public class Grabbable : MonoBehaviour
     {
         Debug.Log("Release Parent");
 
-        grabber.grabAction.action.canceled -= OnGrabActionCanceled;
+        // Se désabonner en fonction du type de grab utilisé
+        if (grabTriggerType == GrabTriggerType.HandTrigger)
+        {
+            grabber.grabAction.action.canceled -= OnGrabActionCanceled;
+            grabber.triggerAction.action.started -= OnActivateStarted;
+            grabber.triggerAction.action.canceled -= OnActivateCanceled;
+        }
+        else // IndexTrigger
+        {
+            grabber.triggerAction.action.canceled -= OnGrabActionCanceled;
+        }
+
         grabber.primaryAction.action.started -= OnPrimaryStarted;
         grabber.secondaryAction.action.started -= OnSecondaryStarted;
-        grabber.triggerAction.action.started -= OnActivateStarted;
-        grabber.triggerAction.action.canceled -= OnActivateCanceled;
-
+        
         onGrabStop?.Invoke();
         grabbed = false;
         grabber.Grabbing = false;
@@ -290,7 +367,15 @@ public class Grabbable : MonoBehaviour
     {
         Debug.Log("Secondary Release");
 
-        grabber.grabAction.action.canceled -= OnSecondaryGrabActionCanceled;
+        // Se désabonner en fonction du type de grab utilisé
+        if (grabTriggerType == GrabTriggerType.HandTrigger)
+        {
+            grabber.grabAction.action.canceled -= OnSecondaryGrabActionCanceled;
+        }
+        else // IndexTrigger
+        {
+            grabber.triggerAction.action.canceled -= OnSecondaryGrabActionCanceled;
+        }
 
         onSecondaryGrabStop?.Invoke();
         secondaryGrabbed = false;

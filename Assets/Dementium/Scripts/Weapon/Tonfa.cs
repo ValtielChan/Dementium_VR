@@ -19,7 +19,7 @@ public class Tonfa : MonoBehaviour
         Debug.Log($"Collide with {collision.gameObject.name}");
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.SendMessage("Damage", 1);
+            collision.gameObject.SendMessage("Damage", 10);
         }
     }
 }
